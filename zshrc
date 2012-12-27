@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="kphoen"
+#ZSH_THEME="kphoen"
 ZSH_THEME="nicoulaj"
 
 # Example aliases
@@ -35,3 +35,18 @@ plugins=(git debian)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# Stop stupid autocorrection
+alias sudo='nocorrect sudo'
+
+# Add home bin/ directory to PATH
+export PATH=$PATH:/home/ziarkaen/bin
+
+# Set default GPG key
+export GPGKEY=91A049FE
+
+# Stop GHC cluttering up working directory
+alias ghc="ghc -outputdir ~/ghc_intermediate"
+
+# Set Emacs as default editor
+export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient

@@ -62,7 +62,7 @@ line instead."
         (line-beginning-position 2)))))
 
 ;; Don't clutter directories wt backup files
-(setq backup-directory-alist '(("." . ".~")))
+(setq backup-directory-alist '(("." . "~/.backup")))
 
 
 ;; Start fullscreened

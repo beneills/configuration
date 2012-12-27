@@ -7,6 +7,7 @@
 (load "~/.emacs.d/misc.el")
 (load "~/.emacs.d/handy.el")
 (load "~/.emacs.d/modeline.el")
+(load "~/.emacs.d/less-css-mode.el")
 
 (ido-mode t)
 
@@ -62,7 +63,6 @@
 (add-hook 'python-mode-hook #'lambda-mode 1)
 
 ;; Org mode
-(setq org-mobile-directory "~/Dropbox/MobileOrg")
 ;; The following lines are always needed.  Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
@@ -70,14 +70,32 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+;; http://mobileorg.ncogni.to/doc/getting-started/using-dropbox/
+;; Set to the location of your Org files on your local system
+(setq org-directory "~/org")
+;; Set to the name of the file where new notes will be stored
+(setq org-mobile-inbox-for-pull "~/org/flagged.org")
+;; Set to <your Dropbox root directory>/MobileOrg.
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+
+;; recentf stuff
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
+
+(global-set-key "\C-cs" 'shell)
+
+
 ;; Customize stuff
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/test.org")))
+ '(org-agenda-files (quote ("~/Dropbox/tour.org" "~/org/planar.org" "~/org/todo.org")))
  '(org-mobile-files (quote (org-agenda-files)))
+ '(safe-local-variable-values (quote ((less-css-compile-at-save . t))))
  '(tooltip-mode nil))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
@@ -86,3 +104,6 @@
   ;; If there is more than one, they won't work right.
  )
 
+;; EmacsClient config
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+(server-start)
