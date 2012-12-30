@@ -3,7 +3,7 @@
 # 
 
 # Emacs
-alias e="emacsclient -c -n -a nano"
+alias e="emacsclient -n -a nano"
 alias se="sudo -e"
 
 
