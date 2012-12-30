@@ -27,3 +27,6 @@ function mvln() {
 # A bit of security
 alias cp="cp -i"
 alias mv="mv -i"
+
+# Stop GHC cluttering up working directory
+alias ghc="ghc -outputdir ~/ghc_intermediate"
