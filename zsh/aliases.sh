@@ -30,3 +30,6 @@ alias mv="mv -i"
 
 # Stop GHC cluttering up working directory
 alias ghc="ghc -outputdir ~/ghc_intermediate"
+
+# VPN
+alias vpn="sudo openvpn --config /etc/openvpn/alwaysvpn-compatible"
