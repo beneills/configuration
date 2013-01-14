@@ -107,3 +107,6 @@
 ;; EmacsClient config
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 (server-start)
+
+;; Stop requiring yes/no full words
+(defalias 'yes-or-no-p 'y-or-n-p)
