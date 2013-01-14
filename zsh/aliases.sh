@@ -33,3 +33,9 @@ alias ghc="ghc -outputdir ~/.ghc_intermediate"
 
 # VPN
 alias vpn="sudo openvpn --config /etc/openvpn/alwaysvpn-compatible"
+
+# Archive command
+alias archive="mv -t ~/archive"
+
+# Conf git command
+alias cgit="git --git-dir ~/conf/.git --work-tree ~/conf"
