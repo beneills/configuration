@@ -39,3 +39,9 @@ alias archive="mv -t ~/archive"
 
 # Conf git command
 alias cgit="git --git-dir ~/conf/.git --work-tree ~/conf"
+
+#  Mkdir and immediate cd
+mkcd () {
+    mkdir -p "${1}"
+    cd "${1}"
+}
