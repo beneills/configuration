@@ -110,3 +110,9 @@
 
 ;; Stop requiring yes/no full words
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Alow file editing as root
+(require 'tramp)
+(setq tramp-default-method "scp")
+(setq recentf-auto-cleanup 'never) ; stop recentf trying to SSH all the time
+
