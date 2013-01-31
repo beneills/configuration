@@ -32,7 +32,7 @@ alias mv="mv -i"
 alias ghc="ghc -outputdir ~/.ghc_intermediate"
 
 # VPN
-alias vpn="sudo openvpn --config /etc/openvpn/alwaysvpn-compatible"
+alias vpn="sudo openvpn --config /etc/openvpn/IPredator-CLI-Password.conf"
 
 # Archive command
 alias archive="mv -t ~/archive"
