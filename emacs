@@ -125,3 +125,8 @@
 (setq tramp-default-method "scp")
 (setq recentf-auto-cleanup 'never) ; stop recentf trying to SSH all the time
 
+;; EMMS
+(add-to-list 'load-path "~/.emacs.d/emms")
+(require 'emms-setup)
+(emms-standard)
+(emms-default-players)
