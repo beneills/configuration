@@ -128,5 +128,7 @@
 ;; EMMS
 (add-to-list 'load-path "~/.emacs.d/emms")
 (require 'emms-setup)
+(require 'emms-streams)
 (emms-standard)
 (emms-default-players)
+(setq emms-source-file-default-directory "~/Music/")
