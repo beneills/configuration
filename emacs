@@ -6,6 +6,7 @@
 (load "~/.emacs.d/general.el")
 (load "~/.emacs.d/misc.el")
 (load "~/.emacs.d/handy.el")
+(load "~/.emacs.d/emms.el")
 (load "~/.emacs.d/modeline.el")
 (load "~/.emacs.d/less-css-mode.el")
 
@@ -125,10 +126,3 @@
 (setq tramp-default-method "scp")
 (setq recentf-auto-cleanup 'never) ; stop recentf trying to SSH all the time
 
-;; EMMS
-(add-to-list 'load-path "~/.emacs.d/emms")
-(require 'emms-setup)
-(require 'emms-streams)
-(emms-standard)
-(emms-default-players)
-(setq emms-source-file-default-directory "~/Music/")
