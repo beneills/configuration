@@ -103,6 +103,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
+ '(completion-styles (quote (basic partial-completion emacs22 initials)))
  '(org-agenda-files (quote ("~/Dropbox/tour.org" "~/org/planar.org" "~/org/todo.org")))
  '(org-mobile-files (quote (org-agenda-files)))
  '(safe-local-variable-values (quote ((less-css-compile-at-save . t))))
@@ -126,3 +127,5 @@
 (setq tramp-default-method "scp")
 (setq recentf-auto-cleanup 'never) ; stop recentf trying to SSH all the time
 
+;; Avoid typing capitals
+(setq read-file-name-completion-ignore-case t)
