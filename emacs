@@ -3,12 +3,14 @@
 ;;       (default-directory my-lisp-dir))
 ;;  (setq load-path (cons my-lisp-dir load-path))
 ;;  (normal-top-level-add-subdirs-to-load-path))
+(load "~/.emacs-secret.el") ;; Passwords, etc.
 (load "~/.emacs.d/general.el")
 (load "~/.emacs.d/misc.el")
 (load "~/.emacs.d/handy.el")
 (load "~/.emacs.d/emms.el")
 (load "~/.emacs.d/modeline.el")
 (load "~/.emacs.d/less-css-mode.el")
+(load "~/.emacs.d/irc.el")
 
 (ido-mode t)
 
@@ -129,3 +131,6 @@
 
 ;; Avoid typing capitals
 (setq read-file-name-completion-ignore-case t)
+
+;; Stop switching to IRC Network buffers
+(add-to-list 'ido-ignore-buffers "^irc\\.")
