@@ -32,7 +32,10 @@ alias mv="mv -i"
 alias ghc="ghc -outputdir ~/.ghc_intermediate"
 
 # VPN
-alias vpn="sudo openvpn --config /etc/openvpn/IPredator-CLI-Password.conf"
+function vpn() {
+    su -c "echo \"nameserver 8.8.8.8\" > /etc/resolv.conf"
+    sudo openvpn --config /etc/openvpn/IPredator-CLI-Password.conf
+}
 
 # Archive command
 alias archive="mv -t ~/archive"
