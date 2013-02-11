@@ -32,3 +32,5 @@
 (global-set-key (kbd "C-c e <up>") 'emms-volume-raise)
 (global-set-key (kbd "C-c e <down>") 'emms-volume-lower)
 
+;; Don't block other audio apps
+(setq emms-player-mpg321-parameters '("-o" "alsa"))
