@@ -149,3 +149,9 @@
 
 ;; Magit
 (require 'magit)
+
+;; Open this conf file by default
+(let ((conf-file "~/conf/emacs"))
+     (unless (get-file-buffer conf-file)
+       (and (find-file conf-file)
+	    (end-of-buffer))))
