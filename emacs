@@ -155,3 +155,6 @@
      (unless (get-file-buffer conf-file)
        (and (find-file conf-file)
 	    (end-of-buffer))))
+
+;; Fix clipboard issue
+(setq x-select-enable-clipboard t)
