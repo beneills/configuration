@@ -48,3 +48,6 @@ mkcd () {
     mkdir -p "${1}"
     cd "${1}"
 }
+
+# Open files easily
+alias o="xdg-open"
