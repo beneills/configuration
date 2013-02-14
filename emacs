@@ -171,3 +171,42 @@
 
 ;; Easy backward-kill-word OVERWRITES mark-defun binding
 (global-set-key (kbd "C-M-h") 'backward-kill-word)
+
+;; Fix STicky CHars caused by my sloppy touch-typing
+(defun fix-sticky-chars ()
+  (interactive)
+  (save-excursion
+    (let (case-fold-search 'nil)
+      (if (re-search-backward "\\<[[:upper:]]\\{2\\}"
+			  0
+			  't)
+	  (progn (forward-char)
+		 (push-mark)
+		 (forward-char)
+		 (call-interactively 'downcase-region)
+		 (message "Fixed a sticky key error.")
+		 't)
+	'nil))))
+	
+
+;; Fix semicolon typo e.g. "didn;t"
+(defun fix-semicolon-apostrophe ()
+  (interactive)
+  (save-excursion
+    (if (re-search-backward "\\w;\\w"
+			      0
+			      't)
+	(progn
+	 (forward-char)
+	 (delete-char 1)
+	 (insert "'")
+	 (message "Fixed a semi-colon error.")
+	 't)
+      nil)))
+
+(defun fix-stuff ()
+       (interactive)
+       (or (call-interactively 'fix-semicolon-apostrophe)
+       	   (call-interactively 'fix-sticky-chars)))
+
+(global-set-key (kbd "C-c k") 'fix-stuff)
