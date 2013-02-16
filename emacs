@@ -106,6 +106,7 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(completion-styles (quote (basic partial-completion emacs22 initials)))
+ '(fill-column 80)
  '(org-agenda-files (quote ("~/Dropbox/tour.org" "~/org/planar.org" "~/org/todo.org")))
  '(org-mobile-files (quote (org-agenda-files)))
  '(safe-local-variable-values (quote ((less-css-compile-at-save . t))))
