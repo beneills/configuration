@@ -5,7 +5,7 @@
 (require 'emms-volume)
 (emms-standard)
 (emms-default-players)
-(setq emms-source-file-default-directory "~/Music/")
+(setq emms-source-file-default-directory "~/Downloads/")
 
 (global-set-key (kbd "C-c e x") 'emms-start)
 (global-set-key (kbd "C-c e v") 'emms-stop)
