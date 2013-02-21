@@ -33,3 +33,6 @@
                                         erc-direct-msg-face
                                         erc-dangerous-host-face
                                         erc-prompt-face))
+;; Keep prompt anchored to bottom of buffer.  Why would I want it half-way up?!
+(require 'erc-goodies)
+;;(erc-scroll-to-bottom-mode 1)

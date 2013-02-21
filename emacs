@@ -106,6 +106,8 @@
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  '(completion-styles (quote (basic partial-completion emacs22 initials)))
+ '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
+ '(erc-join-buffer (quote bury))
  '(fill-column 80)
  '(org-agenda-files (quote ("~/Dropbox/tour.org" "~/org/planar.org" "~/org/todo.org")))
  '(org-mobile-files (quote (org-agenda-files)))
@@ -159,6 +161,8 @@
 
 ;; Fix clipboard issue
 (setq x-select-enable-clipboard t)
+(setq x-select-enable-primary nil)
+(setq mouse-drag-copy-region nil)
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
