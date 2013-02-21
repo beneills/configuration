@@ -51,3 +51,6 @@ mkcd () {
 
 # Open files easily
 alias o="xdg-open"
+
+# ls/cat stuff
+alias l="~/bin/lo"
