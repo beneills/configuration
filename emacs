@@ -157,6 +157,7 @@
 (let ((conf-file "~/conf/emacs"))
      (unless (get-file-buffer conf-file)
        (and (find-file conf-file)
+       	    (rename-buffer "config")
 	    (end-of-buffer))))
 
 ;; Fix clipboard issue
