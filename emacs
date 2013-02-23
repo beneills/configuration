@@ -107,6 +107,7 @@
   ;; If there is more than one, they won't work right.
  '(completion-styles (quote (basic partial-completion emacs22 initials)))
  '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
+ '(erc-input-line-position -1)
  '(erc-join-buffer (quote bury))
  '(fill-column 80)
  '(org-agenda-files (quote ("~/Dropbox/tour.org" "~/org/planar.org" "~/org/todo.org")))
@@ -216,3 +217,8 @@
        	   (call-interactively 'fix-sticky-chars)))
 
 (global-set-key (kbd "C-c k") 'fix-stuff)
+
+;; Hide dot-files by default in dired
+(require 'dired-x)
+(setq dired-omit-files "^\\...+$")
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode 1)))
