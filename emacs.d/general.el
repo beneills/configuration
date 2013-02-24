@@ -3,6 +3,7 @@
 ;; Thu Aug  2 22:05:18 2012
 
 (tool-bar-mode -1)                       ;; turn-off toolbar 
+(menu-bar-mode -1)                       ;;   ...and menu
 
 ;;(setq cua-enable-cua-keys nil)           ;; only for rectangles
 ;;(cua-mode t)
