@@ -53,4 +53,4 @@ mkcd () {
 alias o="xdg-open"
 
 # ls/cat stuff
-alias l="~/bin/lo"
+alias l="~/bin/wand"
