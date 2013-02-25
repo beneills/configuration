@@ -1,5 +1,10 @@
+# Emacs cache directories
 emacs.d/auto-save-list/
 emacs.d/ac-comphist.dat
 emacs.d/session*
 emacs.d/emms/cache
 /emacs.d/url/cookies
+
+# We never want to publish ~/.secret
+secret
+.secret
