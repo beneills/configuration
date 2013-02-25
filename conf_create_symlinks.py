@@ -3,7 +3,7 @@
 import os
 import os.path
 
-IGNORE_FILES = ( 'conf_create_symlinks.py', )
+IGNORE_FILES = ( 'conf_create_symlinks.py', 'conf_add.py')
 SOURCE_DIR = '/home/ziarkaen/conf'
 TARGET_DIR = '/home/ziarkaen'
 
