@@ -54,3 +54,8 @@ alias o="xdg-open"
 
 # ls/cat stuff
 alias l="~/bin/wand"
+
+# Copy downloaded books to ~/books
+archive_books () {
+    cp -n ~/Downloads/*.{mobi,epub} ~/books/
+}
