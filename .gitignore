@@ -9,3 +9,4 @@ emacs.d/elpa
 # We never want to publish ~/.secret
 secret
 .secret
+/#emacs#
