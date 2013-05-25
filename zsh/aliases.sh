@@ -59,3 +59,9 @@ alias l="~/bin/wand"
 archive_books () {
     cp -n ~/Downloads/*.{mobi,epub} ~/books/
 }
+
+# Most recently downloaded file
+alias -g mrd="~/Downloads/*(om[1])"
+
+# Google takeout archiving
+alias takeout="mv ~/Downloads/ben\@beneills.com-takeout.zip ~/backup/takeout-`date +%F`.zip"
