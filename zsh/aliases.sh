@@ -38,7 +38,7 @@ function vpn() {
 }
 
 # Archive command
-alias archive="mv -t ~/archive"
+alias archive="mv -nt ~/archive"
 
 # Conf git command
 alias cgit="git --git-dir ~/conf/.git --work-tree ~/conf"
