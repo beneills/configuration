@@ -33,8 +33,8 @@ alias ghc="ghc -outputdir ~/.ghc_intermediate"
 
 # VPN
 function vpn() {
-    su -c "echo \"nameserver 8.8.8.8\" > /etc/resolv.conf"
-    sudo openvpn --config /etc/openvpn/IPredator-CLI-Password.conf
+    echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+    sudo openvpn --script-security 2 --config /etc/openvpn/IPredator-CLI-Password.conf
 }
 
 # Archive command
