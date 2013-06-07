@@ -30,11 +30,11 @@
 ;; (pymacs-load "ropemacs" "rope-")
 ;; (setq ropemacs-enable-autoimport t)
 
-;; Yasnippet
-(add-to-list 'load-path "~/.emacs.d/yasnippet/")
-(require 'yasnippet)
-;;(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
-(yas/global-mode 1)
+;; ;; Yasnippet
+;; (add-to-list 'load-path "~/.emacs.d/yasnippet/")
+;; (require 'yasnippet)
+;; ;;(setq yas/trigger-key (kbd "C-c <kp-multiply>"))
+;; (yas/global-mode 1)
 
 (setq ;; scrolling
   scroll-margin 0                        ;; do smooth scrolling, ...
