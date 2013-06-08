@@ -234,3 +234,5 @@
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
