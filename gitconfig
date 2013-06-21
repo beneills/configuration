@@ -17,3 +17,5 @@
 
 [include]
   path = ~/.secret/gitconfig
+[push]
+	default = simple
