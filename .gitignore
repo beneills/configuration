@@ -10,3 +10,7 @@ emacs.d/elpa
 secret
 .secret
 /#emacs#
+
+# Emacs
+*~
+
