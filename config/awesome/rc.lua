@@ -200,6 +200,8 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     -- Custom
     awful.key({ modkey,           }, "d",   function () awful.util.spawn(dmenu_run) end),
+--    awful.key({                   }, "#133",   function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ "Mod1", "Control"  }, "l",   function () awful.util.spawn("xscreensaver-command -activate") end),
 
     -- Defaults
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
