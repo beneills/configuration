@@ -53,6 +53,7 @@
 
 ;; EmacsClient config
 (server-start)
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 
 (setq inhibit-startup-message t
   inhibit-startup-echo-area-message t)
