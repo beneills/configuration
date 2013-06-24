@@ -250,3 +250,6 @@ function vpn() {
 
 # alias lm='ll |more'        #  Pipe through 'more'
 # alias lr='ll -R'           #  Recursive ls.
+
+
+PATH=$PATH:~/bin
