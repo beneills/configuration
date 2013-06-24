@@ -1,1 +1,0 @@
-/home/ziarkaen/.emacs.d
