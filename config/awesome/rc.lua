@@ -75,7 +75,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "web", "emacs", "anki", "passwords", "five", "six", "seven", "eight", "term" }, s, layouts[1])
+    tags[s] = awful.tag({ "web", "emacs", "anki", "passwords", "five", "six", "seven", "fume", "term" }, s, layouts[1])
 end
 -- }}}
 
@@ -200,8 +200,7 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     -- Custom
     awful.key({ modkey,           }, "d",   function () awful.util.spawn(dmenu_run) end),
---    awful.key({                   }, "#133",   function () awful.util.spawn("xscreensaver-command -lock") end),
-    awful.key({ "Mod1", "Control"  }, "l",   function () awful.util.spawn("xscreensaver-command -activate") end),
+    awful.key({ "Mod1", "Control" }, "l",   function () awful.util.spawn("xscreensaver-command -activate") end),
 
     -- Defaults
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
@@ -334,12 +333,12 @@ root.keys(globalkeys)
 -- {{{ Rules
 awful.rules.rules = {
     -- Custom
-    { rule = { class = "chromium-browser" },
+    { rule = { class = "Chromium-browser" },
       properties = { tag = tags[1][1],
       		     maximized_vertical = true,
 		     maximized_horizontal = true } },
 
-    { rule = { class = "Emacs23" },
+    { rule = { instance = "emacs" },
       properties = { tag = tags[1][2],
       		     maximized_vertical = true,
 		     maximized_horizontal = true } },
@@ -356,6 +355,11 @@ awful.rules.rules = {
 
     { rule = { name = "static_term" },
       properties = { tag = tags[1][9],
+      		     maximized_vertical = true,
+		     maximized_horizontal = true } },
+
+    { rule = { name = "fume_term" },
+      properties = { tag = tags[1][8],
       		     maximized_vertical = true,
 		     maximized_horizontal = true } },
 
