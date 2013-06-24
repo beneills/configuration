@@ -81,11 +81,23 @@
   (require 'magit)
   (global-set-key (kbd "C-x g") 'magit-status))
 
-;; Open this conf file by default
-(let ((conf-file "~/conf/emacs"))
+;; Open some files by default TODO: Idempotence
+(let ((conf-file "~/.emacs.d/init.el"))
      (unless (get-file-buffer conf-file)
        (and (find-file conf-file)
-       	    (rename-buffer "config")
+       	    (rename-buffer "emacs-config")
+	    (end-of-buffer))))
+
+(let ((conf-file "~/.bashrc"))
+     (unless (get-file-buffer conf-file)
+       (and (find-file conf-file)
+       	    (rename-buffer "bash-config")
+	    (end-of-buffer))))
+
+(let ((conf-file "~/.config/awesome/rc.lua"))
+     (unless (get-file-buffer conf-file)
+       (and (find-file conf-file)
+       	    (rename-buffer "awesome-config")
 	    (end-of-buffer))))
 
 (defun kill-all-dired-buffers()
