@@ -48,6 +48,7 @@ shopt -s extglob
 
 ## Some aliases
 # Aptitude
+alias g='source ~/.bashrc'
 alias c='cd && clear'
 alias i='sudo aptitude install'
 alias s='aptitude search'
