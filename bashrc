@@ -48,6 +48,7 @@ shopt -s extglob
 
 ## Some aliases
 # Aptitude
+alias e='emacsclient -nw'
 alias g='source ~/.bashrc'
 alias c='cd && clear'
 alias i='sudo aptitude install'
