@@ -9,7 +9,7 @@ terminator -m --title static_term & # static terminal
 terminator -m --title fume_term -e fume & # fume
 
 guake &
-nm-applet &
+wicd-client &
 xscreensaver -no-splash &
 xfce4-power-manager &
 xfce4-volumed &
