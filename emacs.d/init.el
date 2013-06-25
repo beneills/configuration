@@ -154,7 +154,7 @@
 (defun activate-maximized ()
   (interactive)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-                 '(1 "_NET_WM_STATE_MAXXIMIZED_VERT"
+                 '(1 "_NET_WM_STATE_MAXIMIZED_VERT"
 		     "_NET_WM_STATE_MAXIMIZED_HORZ"))
 )
 (if (window-system)

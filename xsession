@@ -5,8 +5,8 @@ chromium-browser &
 emacs > /tmp/emacs.log &
 anki &
 keepassx &
-terminator --title static_term & # static terminal
-terminator --title fume_term -e fume & # fume
+terminator -m --title static_term & # static terminal
+terminator -m --title fume_term -e fume & # fume
 
 guake &
 nm-applet &
