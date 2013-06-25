@@ -78,9 +78,8 @@
 
 
 ;; Magit
-(when (package-installed-p 'magit)
-  (require 'magit)
-  (global-set-key (kbd "C-x g") 'magit-status))
+(require 'magit)
+(global-set-key (kbd "C-x g") 'magit-status)
 
 ;; Open some files by default TODO: Idempotence
 (let ((conf-file "~/.emacs.d/init.el"))
