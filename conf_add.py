@@ -31,6 +31,10 @@ for filename in sys.argv[1:]:
         continue
 
     try:
+        parent_dir = os.path.dirname(new_filename)
+        if not os.path.is_dir(parent_dir):
+            print "Making parent directory: {0}".format(parent_dir)
+            os.makedirs(parent_dir)
         print "Moving: {0} -> {1}".format(filename, new_filename)
         os.rename(filename, new_filename)
         print "Linking {1} -> {0}".format(new_filename, filename)
