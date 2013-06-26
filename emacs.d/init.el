@@ -78,23 +78,22 @@
 
 
 ;; Magit
-(require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;; Open some files by default TODO: Idempotence
-(let ((conf-file "~/.emacs.d/init.el"))
+(let ((conf-file "~/conf/emacs.d/init.el"))
      (unless (get-file-buffer conf-file)
        (and (find-file conf-file)
        	    (rename-buffer "emacs-config")
 	    (end-of-buffer))))
 
-(let ((conf-file "~/.bashrc"))
+(let ((conf-file "~/conf/bashrc"))
      (unless (get-file-buffer conf-file)
        (and (find-file conf-file)
        	    (rename-buffer "bash-config")
 	    (end-of-buffer))))
 
-(let ((conf-file "~/.config/awesome/rc.lua"))
+(let ((conf-file "~/conf/config/awesome/rc.lua"))
      (unless (get-file-buffer conf-file)
        (and (find-file conf-file)
        	    (rename-buffer "awesome-config")
