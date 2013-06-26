@@ -46,9 +46,15 @@ shopt -s cmdhist
 shopt -s histappend histreedit histverify
 shopt -s extglob
 
+
+## Env
+PATH=$PATH:~/bin
+export EDITOR='emacsclient -nw'
+
+
 ## Some aliases
 # Aptitude
-alias e='emacsclient -nw'
+alias e='$EDITOR'
 alias g='source ~/.bashrc'
 alias c='cd && clear'
 alias i='sudo aptitude install'
@@ -252,4 +258,3 @@ function vpn() {
 # alias lr='ll -R'           #  Recursive ls.
 
 
-PATH=$PATH:~/bin
