@@ -78,6 +78,13 @@
 
 
 ;; Magit
+;; (defun magit-status-ben()
+;;   "If we are in ~/, use ~/conf as git directory"
+;;   (interactive)
+;;   (if (equal default-directory "/home/ziarkaen/")
+;;       (magit-status "/home/ziarkaen/conf/")
+;;       (call-interactively 'magit-status)))
+(setq vc-follow-symlinks t) ; make magit work with dotfiles in ~/
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;; Open some buffers by default
@@ -166,8 +173,7 @@
   (interactive)
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
                  '(1 "_NET_WM_STATE_MAXIMIZED_VERT"
-		     "_NET_WM_STATE_MAXIMIZED_HORZ"))
-)
+		     "_NET_WM_STATE_MAXIMIZED_HORZ")))
 (if (window-system)
   (activate-maximized))
 
