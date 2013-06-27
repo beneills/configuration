@@ -80,7 +80,7 @@
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
-;; Open some files by default TODO: Idempotence
+;; Open some buffers by default
 (let ((conf-file "~/conf/emacs.d/init.el"))
      (unless (get-file-buffer conf-file)
        (and (find-file conf-file)
@@ -98,6 +98,19 @@
        (and (find-file conf-file)
        	    (rename-buffer "awesome-config")
 	    (end-of-buffer))))
+
+(let ((dired-path "~/bin"))
+     (unless (get-file-buffer dired-path)
+       (and (dired dired-path)
+       	    (rename-buffer "bin")
+	    (end-of-buffer))))
+
+(let ((dired-path "~/projects"))
+     (unless (get-file-buffer dired-path)
+       (and (dired dired-path)
+       	    (rename-buffer "projects")
+	    (end-of-buffer))))
+
 
 (defun kill-all-dired-buffers()
       "Kill all dired buffers."
