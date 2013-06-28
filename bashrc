@@ -258,3 +258,6 @@ function vpn() {
 # alias lr='ll -R'           #  Recursive ls.
 
 
+## And source other files
+
+source "~/.bash/git-completion.bash"
