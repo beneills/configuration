@@ -185,6 +185,15 @@
 
 ;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
 
+;;; Shell mode
+;(defadvice process-kill-buffer-query-function (around no-prompt-for-shells
+;						      protect)
+;  "Don't prompt user when killing shell with running process"
+;  (message major-mode)
+;  (let ((modes '("shell-mode")))
+;  (unless (member major-mode modes)
+;    ad-do-it)))
+
 
 ;;; Org Mode
 (defun org-todo-and-next ()
