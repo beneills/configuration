@@ -260,4 +260,4 @@ function vpn() {
 
 ## And source other files
 
-source "~/.bash/git-completion.bash"
+source ~/.bash/git-completion.bash
