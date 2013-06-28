@@ -88,35 +88,27 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 ;; Open some buffers by default
-(let ((conf-file "~/conf/emacs.d/init.el"))
-     (unless (get-file-buffer conf-file)
-       (and (find-file conf-file)
-       	    (rename-buffer "emacs-config")
-	    (end-of-buffer))))
+(setq default-files '(("emacs-config" . "~/conf/emacs.d/init.el")
+		      ("bash-config" . "~/conf/bashrc")
+		      ("awesome-config" . "~/conf/config/awesome/rc.lua")))
 
-(let ((conf-file "~/conf/bashrc"))
-     (unless (get-file-buffer conf-file)
-       (and (find-file conf-file)
-       	    (rename-buffer "bash-config")
-	    (end-of-buffer))))
+(setq default-directories '(("bin" . "~/bin")
+			    ("projects" . "~/projects"))) ; we want ~/projects last
 
-(let ((conf-file "~/conf/config/awesome/rc.lua"))
-     (unless (get-file-buffer conf-file)
-       (and (find-file conf-file)
-       	    (rename-buffer "awesome-config")
-	    (end-of-buffer))))
+(dolist (item default-files)
+  (let ((name (car item))
+	(path (cdr item)))
+     (unless (get-file-buffer path)
+       (and (find-file path)
+       	    (rename-buffer name)))))
 
-(let ((dired-path "~/bin"))
-     (unless (get-file-buffer dired-path)
-       (and (dired dired-path)
-       	    (rename-buffer "bin")
-	    (end-of-buffer))))
 
-(let ((dired-path "~/projects"))
-     (unless (get-file-buffer dired-path)
-       (and (dired dired-path)
-       	    (rename-buffer "projects")
-	    (end-of-buffer))))
+(dolist (item default-directories)
+  (let ((name (car item))
+	(path (cdr item)))
+     (unless (get-buffer name)
+       (and (dired path)
+       	    (rename-buffer name)))))
 
 
 (defun kill-all-dired-buffers()
