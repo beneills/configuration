@@ -186,7 +186,13 @@
 ;; http://www.emacswiki.org/cgi-bin/wiki/ShowParenMode
 
 
-
+;;; Org Mode
+(defun org-todo-and-next ()
+       "Toggle todo status and go to next line"
+       (interactive)
+       (org-todo)
+       (next-line))
+; (local-set-key "\C-c\C-t" 'org-todo-and-next) TODO run when weekly.org is opened
 
 ;;; ERC configuration
 (require 'erc-services)
