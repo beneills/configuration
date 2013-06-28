@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(completion-styles (quote (basic partial-completion emacs22 initials)))
+ '(dired-auto-revert-buffer t)
  '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
  '(erc-input-line-position -1)
  '(erc-join-buffer (quote bury))

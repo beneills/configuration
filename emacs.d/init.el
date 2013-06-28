@@ -1,3 +1,6 @@
+;; Secrets!
+(load-file "~/.secret/emacs.el")
+
 ;;;;
 ;;;; General keybindings
 ;;;;
@@ -87,10 +90,11 @@
 (setq vc-follow-symlinks t) ; make magit work with dotfiles in ~/
 (global-set-key (kbd "C-x g") 'magit-status)
 
-;; Open some buffers by default
-(setq default-files '(("emacs-config" . "~/conf/emacs.d/init.el")
+;; Startup
+(setq default-files `(("emacs-config" . "~/conf/emacs.d/init.el")
 		      ("bash-config" . "~/conf/bashrc")
-		      ("awesome-config" . "~/conf/config/awesome/rc.lua")))
+		      ("awesome-config" . "~/conf/config/awesome/rc.lua")
+		      ("plan" . ,(format-time-string "~/plans/%Y-%m-%d.org"))))
 
 (setq default-directories '(("bin" . "~/bin")
 			    ("projects" . "~/projects"))) ; we want ~/projects last
@@ -101,7 +105,6 @@
      (unless (get-file-buffer path)
        (and (find-file path)
        	    (rename-buffer name)))))
-
 
 (dolist (item default-directories)
   (let ((name (car item))
@@ -190,16 +193,16 @@
 
 (erc-services-mode 1)
 
-(setq freenode-nickserv-password "TODO")
+
      
 ;;; Set up IRC stuff and connect to my networks.
 (defun connect-to-irc ()
   "Connect to IRC."
   (interactive)
   (erc :server "irc.freenode.net" :port 6667
-       :nick "Ziarkaen" :full-name "Ziarkaen")
-  (erc :server "irc.snoonet.org" :port 6667
        :nick "Ziarkaen" :full-name "Ziarkaen"))
+;  (erc :server "irc.snoonet.org" :port 6667
+;       :nick "Ziarkaen" :full-name "Ziarkaen"))
 
 
 (setq erc-prompt-for-nickserv-password nil)
@@ -208,8 +211,9 @@
 
 (global-set-key "\C-cic" 'connect-to-irc)
 
-(setq erc-autojoin-channels-alist '(("freenode.net" "#emacs" "#erc" "##French" "##math" "#haskell" "#hakyll")
-				    ("snoonet.org" "#totallanguage")))
+(setq erc-autojoin-channels-alist '(("freenode.net" "#emacs" "##French" "##math"
+				                    "#ruby" "#latin")))
+;				    ("snoonet.org" "#totallanguage")))
 
 ;; Only use modebar when something important happens
 (setq erc-format-query-as-channel-p t
