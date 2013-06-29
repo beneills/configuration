@@ -127,7 +127,7 @@
     (switch-to-buffer "plan")
   (switch-to-buffer "projects"))
 
-
+;;;; Dired
 (defun kill-all-dired-buffers()
       "Kill all dired buffers."
       (interactive)
@@ -139,6 +139,16 @@
               (setq count (1+ count))
               (kill-buffer buffer)))
           (message "Killed %i dired buffer(s)." count ))))
+
+(defun dired-toggle-dotfile-visibility ()
+  "Show/hide dot-files TODO: show"
+  (interactive)
+  (when (equal major-mode 'dired-mode)
+    (setq dired-dotfiles-visible-p nil)
+    (message "h")
+    (dired-mark-files-regexp "\\\.")
+    (dired-do-kill-lines)))
+
 
 
 ;; Stop switching to IRC Network buffers
