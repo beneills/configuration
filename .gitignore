@@ -5,6 +5,7 @@ emacs.d/session*
 emacs.d/emms/cache
 /emacs.d/url/cookies
 emacs.d/elpa
+emacs.d/daily-startup/*
 
 # We never want to publish ~/.secret
 secret

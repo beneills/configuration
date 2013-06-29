@@ -115,6 +115,19 @@
        	    (rename-buffer name)))))
 
 
+;; Is this our first startup today? Designed to be called *once* only
+(defun first-startup-today-p ()
+  (let ((path (format-time-string "~/.emacs.d/daily-startup/%Y-%m-%d.touch")))
+    (if (file-exists-p path)
+	nil
+      (progn (shell-command (concat "touch " path)) t))))
+
+;; Plan in morning, projects otherwise
+(if (first-startup-today-p)
+    (switch-to-buffer "plan")
+  (switch-to-buffer "projects"))
+
+
 (defun kill-all-dired-buffers()
       "Kill all dired buffers."
       (interactive)
