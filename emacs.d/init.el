@@ -316,3 +316,6 @@
       ;; Clear buffer-modified flag caused by set-visited-file-name
       (set-buffer-modified-p nil))
   (message "Renamed to %s." new-name)))
+
+;; reload
+(global-set-key (kbd "C-c g") (lambda () (interactive) (load-file "/home/ziarkaen/.emacs.d/init.el")))
