@@ -104,15 +104,15 @@
   (let ((name (car item))
 	(path (cdr item)))
      (unless (get-file-buffer path)
-       (and (find-file path)
-       	    (rename-buffer name)))))
+       (find-file path)
+       (rename-buffer name))))
 
 (dolist (item default-directories)
   (let ((name (car item))
 	(path (cdr item)))
      (unless (get-buffer name)
-       (and (dired path)
-       	    (rename-buffer name)))))
+       (dired path)
+       (rename-buffer name))))
 
 
 ;; Is this our first startup today? Designed to be called *once* only
