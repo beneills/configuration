@@ -49,6 +49,7 @@
 
 ;; keep last few versions backed up, but save in .emacs_backups/
 (setq version-control t)
+(setq delete-old-versions t)
 (setq backup-directory-alist '((".*" . "~/.emacs_backups/")))
 
 ;; Stop requiring yes/no full words
