@@ -94,7 +94,8 @@
 (setq default-files `(("emacs-config" . "~/conf/emacs.d/init.el")
 		      ("bash-config" . "~/conf/bashrc")
 		      ("awesome-config" . "~/conf/config/awesome/rc.lua")
-		      ("plan" . ,(format-time-string "~/plans/%Y-%m-%d.org"))))
+		      ("plan" . ,(format-time-string "~/plans/%Y-%m-%d.org"))
+		      ("daily" . "~/.plan/templates/daily.org")))
 
 (setq default-directories '(("bin" . "~/bin")
 			    ("projects" . "~/projects"))) ; we want ~/projects last
