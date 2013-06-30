@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Tasks before anything else TODO: set up user anacron?
+daily.sh
+
 # Autorun
 chromium-browser &
 emacs > /tmp/emacs.log &
