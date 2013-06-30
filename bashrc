@@ -49,7 +49,7 @@ shopt -s extglob
 
 ## Env
 PATH=~/bin:~/.secret/bin:$PATH
-export EDITOR='emacsclient -nw'
+export EDITOR='emacsclient'
 
 
 ## Some aliases
