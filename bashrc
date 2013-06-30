@@ -53,12 +53,16 @@ export EDITOR='emacsclient -nw'
 
 
 ## Some aliases
-# Aptitude
 alias e='$EDITOR'
 alias g='source ~/.bashrc'
 alias c='cd && clear'
+
+# Aptitude
 alias i='sudo aptitude install'
 alias s='aptitude search'
+
+# Typos
+alias it='git'
 
 alias off='sudo shutdown -h now'
 
@@ -129,6 +133,11 @@ function maketar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 
 ## Completion
+
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 # Beeminder goals
 if [ -f "/home/ziarkaen/.beeminder_goals" ]; then
     BEEMINDER_GOALS=$(tr '\n' ' ' < ~/.beeminder_goals);
