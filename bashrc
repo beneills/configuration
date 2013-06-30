@@ -49,11 +49,15 @@ shopt -s extglob
 
 ## Env
 PATH=~/bin:~/.secret/bin:$PATH
-export EDITOR='emacsclient'
+export EDITOR='emacsclient -nw'
 
 
 ## Some aliases
-alias e='$EDITOR'
+# Editor
+alias e='_e'
+# Editor Light
+alias el='emacsclient -nw'
+
 alias g='source ~/.bashrc'
 alias c='cd && clear'
 
@@ -86,6 +90,19 @@ alias more='less'
 export PAGER=less
 
 ## Some functions
+# Editor: edit file in some existing frame, focus and return focus
+# TODO: Check for X
+function _e() {
+    # Current 'desktop' (= awesome tag of lowest index)
+     CUR=`wmctrl -d | grep -e " \* " | cut -f1 -d' '`
+     wmctrl -a "emacs@"
+     emacsclient $@
+     wmctrl -s $CUR
+}
+
+
+
+
 # Find a file with a pattern in name:
 function ff() { find . -type f -iname '*'"$*"'*' -ls ; }
 
