@@ -4,7 +4,7 @@
 export PATH=~/bin:$PATH
 
 # Tasks before anything else TODO: set up user anacron?
-daily.sh
+daily.sh >> /tmp/daily.log
 
 # Autorun
 chromium-browser &
