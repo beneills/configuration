@@ -69,7 +69,8 @@ alias s='aptitude search'
 alias it='git'
 
 alias off='sudo shutdown -h now'
-
+alias gh='hub browse'
+alias archive='mv -int ~/archive'
 
 alias cp='cp -i'
 alias mv='mv -i'
