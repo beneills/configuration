@@ -1,3 +1,9 @@
+;; Sources:
+;;   http://en.wikipedia.org/wiki/User:Gwern/.emacs
+;;   http://www.cabochon.com/~stevey/blog-rants/my-dot-emacs-file.html
+
+
+
 ;; Secrets!
 (load-file "~/.secret/emacs.el")
 
@@ -9,7 +15,7 @@
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 (global-set-key "\C-cs" 'shell)
 (global-set-key "\C-cp" 'plan)
-
+(global-set-key "\C-x\ W" 'rename-file-and-buffer)
 
 ;;;;
 ;;;; More sensible defaults
@@ -393,3 +399,30 @@
 
 ;; better buffer list
 (global-set-key "\C-x\C-b" 'bs-show)
+
+;; No more fill-column
+(global-set-key "\C-x\ f" 'find-file)
+
+(push '("bashrc$" . sh-mode) auto-mode-alist)
+(push '("xsession$" . sh-mode) auto-mode-alist)
+
+;"Set up highlighting of special words for selected modes."
+; <http://www.metasyntax.net/unix/dot-emacs.html>
+(make-face 'taylor-special-words)
+(set-face-attribute 'taylor-special-words nil :foreground "White" :background "Firebrick")
+(let ((pattern "\\<\\(FIXME\\|TODO\\|NOTE\\|WARNING\\|BUGS\\|TO DO\\|FIXME\\|FIX_ME\\|FIX ME\\|HACK\\)"))
+  (mapc
+   (lambda (mode)
+     (font-lock-add-keywords mode `((,pattern 1 'taylor-special-words prepend))))
+   '(ada-mode c-mode emacs-lisp-mode java-mode haskell-mode
+              literate-haskell-mode html-mode lisp-mode php-mode python-mode ruby-mode
+              scheme-mode sgml-mode sh-mode sml-mode markdown-mode)))
+
+;Make completion buffers in a shell disappear after 10 seconds.
+;<http://snarfed.org/space/why+I+don't+run+shells+inside+Emacs>
+(add-hook 'completion-setup-hook
+          (lambda () (run-at-time 10 nil
+                                  (lambda () (delete-windows-on "*Completions*")))))
+
+; TODO: flyspell
+
