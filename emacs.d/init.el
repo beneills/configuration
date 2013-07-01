@@ -65,11 +65,13 @@
 (setq require-final-newline t)
 
 
-
-
-
-
-
+;; Plan
+(setq plan-path (format-time-string "~/plans/%Y-%m-%d.org"))
+(defun plan()
+  "View plan fullscreen"
+  (interactive)
+  (find-file plan-path)
+  (delete-other-windows))
 
 
 ;; IDO
@@ -95,7 +97,7 @@
 (setq default-files `(("emacs-config" . "~/conf/emacs.d/init.el")
 		      ("bash-config" . "~/conf/bashrc")
 		      ("awesome-config" . "~/conf/config/awesome/rc.lua")
-		      ("plan" . ,(format-time-string "~/plans/%Y-%m-%d.org"))
+		      ("plan" . ,plan-path)
 		      ("daily" . "~/.plan/templates/daily.org")))
 
 (setq default-directories '(("bin" . "~/bin")
@@ -127,6 +129,7 @@
 (if (first-startup-today-p)
     (switch-to-buffer "plan")
   (switch-to-buffer "projects"))
+
 
 ;;;; Dired
 (defun kill-all-dired-buffers()
