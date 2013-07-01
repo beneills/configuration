@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Access my scripts
+export PATH=~/bin:$PATH
+
 # Tasks before anything else TODO: set up user anacron?
 daily.sh
 
@@ -17,6 +20,7 @@ xscreensaver -no-splash &
 xfce4-power-manager &
 xfce4-volumed &
 dropbox start &
+clipboardd &
 
 # and then the WM
 exec awesome
