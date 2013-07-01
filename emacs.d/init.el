@@ -150,6 +150,9 @@
     (dired-mark-files-regexp "\\\.")
     (dired-do-kill-lines)))
 
+;; Auto-revert mode
+(add-hook 'dired-mode-hook 'turn-on-auto-revert-mode)
+(setq auto-revert-verbose nil)
 
 
 ;; Stop switching to IRC Network buffers
