@@ -387,3 +387,6 @@
 ;; Winner mode
 (when (fboundp 'winner-mode)
   (winner-mode 1))
+
+;; Enable all commands
+(setq disabled-command-function nil)
