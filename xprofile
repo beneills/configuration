@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# for my monitor: change manually when using another device
+xrandr --output HDMI1 --mode 1920x1200
