@@ -390,3 +390,6 @@
 
 ;; Enable all commands
 (setq disabled-command-function nil)
+
+;; better buffer list
+(global-set-key "\C-x\C-b" 'bs-show)
