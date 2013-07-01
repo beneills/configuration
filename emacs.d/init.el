@@ -154,6 +154,9 @@
       (progn (revert-buffer) ; otherwise just revert to re-show
 	     (set (make-local-variable 'dired-dotfiles-show-p) t)))))
 
+(define-key dired-mode-map (kbd "b") 'dired-dotfiles-toggle)
+
+
 ;; Auto-revert mode
 (add-hook 'dired-mode-hook 'turn-on-auto-revert-mode)
 (setq auto-revert-verbose nil)
