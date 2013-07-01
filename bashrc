@@ -71,6 +71,10 @@ alias it='git'
 alias off='sudo shutdown -h now'
 alias gh='hub browse'
 alias archive='mv -int ~/archive'
+alias less='less -iF'
+alias po='popd'
+
+
 
 alias cp='cp -i'
 alias mv='mv -i'
@@ -81,7 +85,7 @@ alias ..='cd ..'
 alias du='du -h'    # Makes a more readable output.
 alias df='df -Th'
 
-alias ls='ls -h --color'
+alias ls='ls -h --color=always --group-directories-first -v'
 alias ll="ls -lv --group-directories-first"
 alias la='ll -A'
 alias tree='tree -Csuh'
