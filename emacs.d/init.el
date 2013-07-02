@@ -418,11 +418,12 @@
               literate-haskell-mode html-mode lisp-mode php-mode python-mode ruby-mode
               scheme-mode sgml-mode sh-mode sml-mode markdown-mode)))
 
-;Make completion buffers in a shell disappear after 10 seconds.
+;Make completion buffers in a shell disappear after 5 seconds.
 ;<http://snarfed.org/space/why+I+don't+run+shells+inside+Emacs>
 (add-hook 'completion-setup-hook
-          (lambda () (run-at-time 10 nil
-                                  (lambda () (delete-windows-on "*Completions*")))))
+          (lambda () (run-at-time 5 nil
+                                  (lambda () (if (not (equal (buffer-name) "*Completions*"))
+						 (delete-windows-on "*Completions*"))))))
 
 ; TODO: flyspell
 
