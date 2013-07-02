@@ -246,7 +246,12 @@
        (interactive)
        (org-todo)
        (next-line))
-; (local-set-key "\C-c\C-t" 'org-todo-and-next) TODO run when weekly.org is opened
+
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-c w") 'bold-word)
+	    (local-set-key (kbd "C-c b") 'blue-word)
+	    (local-set-key (kbd "C-c t") 'org-todo-and-next)))
 
 ;;; ERC configuration
 (require 'erc-services)
