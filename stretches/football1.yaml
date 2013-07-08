@@ -1,0 +1,12 @@
+# Solo drill 1
+
+config:
+  default-time: 300
+  sound-file: /var/lib/gems/1.9.1/gems/future_me-0.16.0/signal.wav
+schedule:
+- &circumference Circumference Dribbling x10
+- &juggling1 Foot Juggling Left+Right:180
+- &high High Receiving/Trapping:240
+- &weave Weave Dribbling
+- *juggling1
+- *circumference
