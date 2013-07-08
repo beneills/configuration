@@ -65,15 +65,18 @@ alias c='cd && clear'
 alias i='sudo aptitude install'
 alias s='aptitude search'
 
+# Stretches
+alias football1='stretches -f ~/.stretches/football1.yaml'
+
 # Typos
 alias it='git'
 
 alias off='sudo shutdown -h now'
 alias gh='hub browse'
 alias archive='mv -int ~/archive'
-alias less='less -iF'
+alias less='less -i'
 alias po='popd'
-
+alias grep='grep -i'
 
 
 alias cp='cp -i'
