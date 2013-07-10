@@ -23,7 +23,7 @@
 
 ;; Set default browser to Chromium
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "/usr/bin/chromium")
+      browse-url-generic-program "/usr/bin/chromium-browser")
 
 ;; Scrolling
 (setq
@@ -80,6 +80,18 @@
   (find-file plan-path)
   (delete-other-windows))
 
+;;; Org Mode - HOOK MUST BE SET BEFORE DEFAULT ORG FILES
+(defun org-todo-and-next ()
+       "Toggle todo status and go to next line"
+       (interactive)
+       (org-todo)
+       (search-forward "TODO"))
+
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (local-set-key (kbd "C-c w") 'bold-word)
+	    (local-set-key (kbd "C-c b") 'blue-word)
+	    (local-set-key (kbd "C-c t") 'org-todo-and-next)))
 
 ;; IDO
 (ido-mode t)
@@ -215,7 +227,7 @@
                  '(1 "_NET_WM_STATE_MAXIMIZED_VERT"
 		     "_NET_WM_STATE_MAXIMIZED_HORZ")))
 (if (window-system)
-  (activate-maximized))
+    (run-at-time 2 nil 'activate-maximized))
 
 (require 'uniquify) ;; make buffer names more unique
 (setq 
@@ -240,18 +252,6 @@
 ;    ad-do-it)))
 
 
-;;; Org Mode
-(defun org-todo-and-next ()
-       "Toggle todo status and go to next line"
-       (interactive)
-       (org-todo)
-       (next-line))
-
-(add-hook 'org-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "C-c w") 'bold-word)
-	    (local-set-key (kbd "C-c b") 'blue-word)
-	    (local-set-key (kbd "C-c t") 'org-todo-and-next)))
 
 ;;; ERC configuration
 (require 'erc-services)
@@ -302,7 +302,7 @@
 (require 'emms-volume)
 (emms-standard)
 (emms-default-players)
-(setq emms-source-file-default-directory "~/Downloads/")
+(setq emms-source-file-default-directory "~/music/")
 
 (global-set-key (kbd "C-c e x") 'emms-start)
 (global-set-key (kbd "C-c e v") 'emms-stop)
@@ -432,3 +432,6 @@
 
 ; TODO: flyspell
 
+;; Remember history between sessions
+(savehist-mode t)
+(setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
