@@ -136,6 +136,10 @@
        (dired path)
        (rename-buffer name))))
 
+;; Plan auto-revert mode
+ (save-current-buffer
+   (set-buffer "plan")
+   (turn-on-auto-revert-mode))
 
 ;; Is this our first startup today? Designed to be called *once* only
 (defun first-startup-today-p ()
