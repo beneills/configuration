@@ -1,6 +1,8 @@
 config:
   default-time: 40
   sound-file: /var/lib/gems/1.9.1/gems/future_me-0.16.0/signal.wav
+  update-plan: y
+
 schedule:
 
 # http://chadwaterbury.com/core-hand-walkout/
@@ -31,15 +33,15 @@ schedule:
 
 - rest:20
 
-- &crunches 30 Crunches:35
+#- &crunches 30 Crunches:35
 
-- rest:20
+#- rest:20
 
-- &crunches 30 Crunches
+#- &crunches 30 Crunches
 
-- rest:20
+#- rest:20
 
-- &crunches 30 Crunches
+#- &crunches 30 Crunches
 
 # glute extension http://i.imgur.com/mAHMa.jpg
 # glute bridges http://i.imgur.com/VqWRB.jpg
