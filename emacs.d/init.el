@@ -14,8 +14,8 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
 (global-set-key "\C-cs" 'shell)
-(global-set-key "\C-cp" 'plan)
 (global-set-key "\C-x\ W" 'rename-file-and-buffer)
+(global-set-key "\C-c\C-o" 'org-open-at-point-global)
 
 ;;;;
 ;;;; More sensible defaults
@@ -72,14 +72,6 @@
 (setq require-final-newline t)
 
 
-;; Plan
-(setq plan-path (format-time-string "~/plans/%Y-%m-%d.org"))
-(defun plan()
-  "View plan fullscreen"
-  (interactive)
-  (find-file plan-path)
-  (delete-other-windows))
-
 ;;; Org Mode - HOOK MUST BE SET BEFORE DEFAULT ORG FILES
 (defun org-todo-and-next ()
        "Toggle todo status and go to next line"
@@ -112,6 +104,9 @@
 (setq vc-follow-symlinks t) ; make magit work with dotfiles in ~/
 (global-set-key (kbd "C-x g") 'magit-status)
 
+# (setq plan-path (format-time-string "~/plans/%Y-%m-%d.org"))
+(setq plan-path (format-time-string "~/plans/today.org"))
+
 ;; Startup
 (setq default-files `(("emacs-config" . "~/conf/emacs.d/init.el")
 		      ("bash-config" . "~/conf/bashrc")
@@ -136,10 +131,6 @@
        (dired path)
        (rename-buffer name))))
 
-;; Plan auto-revert mode
- (save-current-buffer
-   (set-buffer "plan")
-   (turn-on-auto-revert-mode))
 
 ;; Is this our first startup today? Designed to be called *once* only
 (defun first-startup-today-p ()
@@ -148,10 +139,6 @@
 	nil
       (progn (shell-command (concat "touch " path)) t))))
 
-;; Plan in morning, projects otherwise
-(if (first-startup-today-p)
-    (switch-to-buffer "plan")
-  (switch-to-buffer "projects"))
 
 
 ;;;; Dired
@@ -439,3 +426,6 @@
 ;; Remember history between sessions
 (savehist-mode t)
 (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring))
+
+(load-file "init-plan.el") # file:init-plan.el
+
