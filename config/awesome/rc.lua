@@ -75,7 +75,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "web", "emacs", "anki", "passwords", "five", "six", "seven", "fume", "term" }, s, layouts[1])
+    tags[s] = awful.tag({ "web", "emacs", "anki", "passwords", "five", "six", "seven", "fume", "term" }, s, layouts[2])
 end
 -- }}}
 
@@ -200,7 +200,7 @@ root.buttons(awful.util.table.join(
 globalkeys = awful.util.table.join(
     -- Custom
     awful.key({ modkey,           }, "d",   function () awful.util.spawn(dmenu_run) end),
-    awful.key({ "Mod1", "Control" }, "l",   function () awful.util.spawn("xscreensaver-command -activate") end),
+    awful.key({ "Mod1", "Control" }, "l",   function () awful.util.spawn("/home/ziarkaen/bin/sys/away.sh") end),
 
     -- Defaults
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
