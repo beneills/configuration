@@ -1,6 +1,6 @@
 config:
   default-time: 40
-  sound-file: /var/lib/gems/1.9.1/gems/future_me-0.16.0/signal.wav
+  sound-file: /var/lib/gems/1.9.1/gems/future_me-*/signal.wav
   update-plan: y
 
 schedule:
@@ -31,7 +31,7 @@ schedule:
 
 - *walkout
 
-- rest:20
+#- rest:20
 
 #- &crunches 30 Crunches:35
 
