@@ -15,3 +15,4 @@ secret
 # Emacs
 *~
 
+/emacs.d/history

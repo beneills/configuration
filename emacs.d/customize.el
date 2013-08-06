@@ -10,6 +10,8 @@
  '(erc-join-buffer (quote bury))
  '(fill-column 80)
  '(org-agenda-files (quote ("~/Dropbox/tour.org" "~/org/planar.org" "~/org/todo.org")))
+ '(org-confirm-elisp-link-function nil)
+ '(org-confirm-shell-link-function nil)
  '(org-mobile-files (quote (org-agenda-files)))
  '(safe-local-variable-values (quote ((less-css-compile-at-save . t))))
  '(tooltip-mode nil)
