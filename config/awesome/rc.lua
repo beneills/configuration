@@ -78,6 +78,7 @@ for s = 1, screen.count() do
     tags[s] = awful.tag({ "web", "emacs", "anki", "passwords", "five", "six", "seven", "fume", "term" }, s, layouts[2])
 end
 -- }}}
+anki_tag = tags[1][3]
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
@@ -333,35 +334,33 @@ root.keys(globalkeys)
 -- {{{ Rules
 awful.rules.rules = {
     -- Custom
+    { rule = { class = "Guake" },
+      properties = { floating = true } },
+
+    -- Fullscreen flash player.  Crap WM_CLASS choice...
+    { rule = { class = "Exe" },
+      properties = { floating = true } },
+
+
     { rule = { class = "Chromium-browser" },
-      properties = { tag = tags[1][1],
-      		     maximized_vertical = true,
-		     maximized_horizontal = true } },
+      properties = { tag = tags[1][1] } },
 
     { rule = { instance = "emacs" },
-      properties = { tag = tags[1][2],
-      		     maximized_vertical = true,
-		     maximized_horizontal = true } },
+      properties = { tag = tags[1][2] } },
 
     { rule = { class = "Anki" },
       properties = { tag = tags[1][3],
-      		     maximized_vertical = true,
-		     maximized_horizontal = true } },
+                     maximized_vertical = false,
+                     maximized_horizontal = false } },
 
     { rule = { class = "Keepassx" },
-      properties = { tag = tags[1][4],
-      		     maximized_vertical = true,
-		     maximized_horizontal = true } },
+      properties = { tag = tags[1][4] } },
 
     { rule = { name = "static_term" },
-      properties = { tag = tags[1][9],
-      		     maximized_vertical = true,
-		     maximized_horizontal = true } },
+      properties = { tag = tags[1][9] } },
 
     { rule = { name = "fume_term" },
-      properties = { tag = tags[1][8],
-      		     maximized_vertical = true,
-		     maximized_horizontal = true } },
+      properties = { tag = tags[1][8] } },
 
     -- Defaults
     -- All clients will match this rule.
