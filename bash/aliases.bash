@@ -1,4 +1,7 @@
 ## Some aliases
+
+alias log='~/projects/log/log.rb'
+alias cinema='echo "Ctrl-C to exit"; watch -n10 "xscreensaver-command -deactivate" > /dev/null'
 # Editor
 alias e='_e'
 # Editor Light
@@ -126,3 +129,4 @@ function vpn() {
     sudo sh -c "echo \"nameserver 8.8.8.8\" > /etc/resolv.conf"
     sudo openvpn --config /etc/openvpn/myvpn.conf
 }
+
