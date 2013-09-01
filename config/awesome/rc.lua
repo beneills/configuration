@@ -78,7 +78,14 @@ for s = 1, screen.count() do
     tags[s] = awful.tag({ "web", "emacs", "anki", "passwords", "five", "six", "seven", "fume", "term" }, s, layouts[2])
 end
 -- }}}
+
+-- For command line
+web_tag = tags[1][1]
+emacs_tag = tags[1][2]
 anki_tag = tags[1][3]
+passwords_tag = tags[1][4]
+term_tag = tags[1][8]
+
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
@@ -200,8 +207,13 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     -- Custom
+    awful.key({ modkey,           }, "a",   function () awful.tag.viewtoggle(anki_tag) end),
     awful.key({ modkey,           }, "d",   function () awful.util.spawn(dmenu_run) end),
+    awful.key({ modkey,           }, "e",   function () awful.tag.viewtoggle(emacs_tag) end),
     awful.key({ "Mod1", "Control" }, "l",   function () awful.util.spawn("/home/ziarkaen/bin/sys/away.sh") end),
+    awful.key({ modkey, 	  }, "s",   function () awful.util.spawn("guake") end),
+    awful.key({ modkey, "Shift"   }, "s",   function () awful.tag.viewtoggle(term_tag) end),
+
 
     -- Defaults
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
@@ -368,6 +380,8 @@ awful.rules.rules = {
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = true,
+                     maximized_vertical = false,
+                     maximized_horizontal = false,
                      keys = clientkeys,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
