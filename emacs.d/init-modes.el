@@ -29,3 +29,11 @@
 (setq tramp-default-method "scp")
 (setq recentf-auto-cleanup 'never) ; stop recentf trying to SSH all the time
 
+
+;; Markdown
+(load-file "markdown-mode.el")
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
