@@ -75,7 +75,7 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ "web", "emacs", "anki", "passwords", "five", "six", "seven", "fume", "term" }, s, layouts[2])
+    tags[s] = awful.tag({ "web", "emacs", "anki", "passwords", "five", "six", "linode", "fume", "term" }, s, layouts[2])
 end
 -- }}}
 
@@ -84,7 +84,11 @@ web_tag = tags[1][1]
 emacs_tag = tags[1][2]
 anki_tag = tags[1][3]
 passwords_tag = tags[1][4]
-term_tag = tags[1][8]
+five_tag = tags[1][5]
+six_tag = tags[1][6]
+linode_tag = tags[1][7]
+fume_tag = tags[1][8]
+term_tag = tags[1][9]
 
 
 -- {{{ Menu
@@ -213,6 +217,9 @@ globalkeys = awful.util.table.join(
     awful.key({ "Mod1", "Control" }, "l",   function () awful.util.spawn("/home/ziarkaen/bin/sys/away.sh") end),
     awful.key({ modkey, 	  }, "s",   function () awful.util.spawn("guake") end),
     awful.key({ modkey, "Shift"   }, "s",   function () awful.tag.viewtoggle(term_tag) end),
+    awful.key({ modkey,           }, "l",   function () awful.tag.viewtoggle(linode_tag) end),
+    awful.key({                   }, "XF86AudioPlay",   function () awful.util.spawn("emacsclient -e \"(emms-pause)\"") end),
+    awful.key({ modkey, "Shift"   }, "o",   function () awful.util.spawn("bash -c off") end),
 
 
     -- Defaults
@@ -371,6 +378,9 @@ awful.rules.rules = {
     { rule = { name = "static_term" },
       properties = { tag = tags[1][9] } },
 
+    { rule = { name = "linode_term" },
+      properties = { tag = tags[1][7] } },
+
     { rule = { name = "fume_term" },
       properties = { tag = tags[1][8] } },
 
@@ -414,7 +424,7 @@ client.add_signal("manage", function (c, startup)
         -- Set the windows at the slave,
         -- i.e. put it at the end of others instead of setting it master.
         -- awful.client.setslave(c)
-
+	
         -- Put windows in a smart way, only if they does not set an initial position.
         if not c.size_hints.user_position and not c.size_hints.program_position then
             awful.placement.no_overlap(c)
