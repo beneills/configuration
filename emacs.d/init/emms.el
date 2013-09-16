@@ -1,10 +1,18 @@
 ;; EMMS
 (require 'emms-setup)
 (require 'emms-volume)
-(emms-standard)
+(emms-all)
+
 (emms-default-players)
 (setq emms-source-file-default-directory "~/music/")
 (setq emms-player-mpg321-parameters '("-o" "alsa"))
+
+(emms-mode-line-disable)
+(emms-playing-time-disable-display)
+
+;; lastfm settings in ~/.secret/emacs.el
+
+
 
 ;; EMMS
 ;(add-to-list 'load-path "~/.emacs.d/emms")
