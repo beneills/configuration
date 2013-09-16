@@ -4,16 +4,15 @@
 
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-c\C-m" 'execute-extended-command)
-(global-set-key "\C-cs" 'shell)
+(global-set-key "\C-cs"
+		(lambda ()
+		  (interactive)
+		  (set-process-query-on-exit-flag
+		   (get-buffer-process (ansi-term "/bin/bash")) nil)))
+
 (global-set-key "\C-x\ W" 'rename-file-and-buffer)
 (global-set-key "\C-c\C-o" 'my-open-at-point)
 
-
-(add-hook 'org-mode-hook
-	  (lambda ()
-	    (local-set-key (kbd "C-c w") 'bold-word)
-	    (local-set-key (kbd "C-c b") 'blue-word)
-	    (local-set-key (kbd "C-c t") 'org-todo-and-next)))
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
@@ -37,7 +36,7 @@
 (global-set-key (kbd "C-c e l") 'emms-lyrics-toggle-display-buffer)
 (global-set-key (kbd "C-c e L") 'emms-lyrics-visit-lyric)
 
-(global-set-key (kbd "C-c e s") 'emms-lastfm-radio-similar-artists)
+(global-set-key (kbd "C-c e s") (lambda () (interactive) (emms-score-set-playing 4)))
 (global-set-key (kbd "C-c e k") 'emms-lastfm-radio-skip)
 
 (global-set-key (kbd "C-c e g") 'emms-playlist-mode-go)
@@ -47,6 +46,10 @@
 (global-set-key (kbd "C-c e <up>") 'emms-volume-raise)
 (global-set-key (kbd "C-c e <down>") 'emms-volume-lower)
 
+;; org-mode 
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; better buffer list
 (global-set-key "\C-x\C-b" 'bs-show)
@@ -59,3 +62,5 @@
 (global-set-key (kbd "C-c g") (lambda () (interactive) (load-file "/home/ziarkaen/.emacs.d/init.el")))
 
 (define-key dired-mode-map (kbd "b") 'dired-dotfiles-toggle)
+
+(global-set-key "\M-/" 'hippie-expand)

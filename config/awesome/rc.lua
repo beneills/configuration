@@ -219,7 +219,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "s",   function () awful.tag.viewtoggle(term_tag) end),
     awful.key({ modkey,           }, "l",   function () awful.tag.viewtoggle(linode_tag) end),
     awful.key({                   }, "XF86AudioPlay",   function () awful.util.spawn("emacsclient -e \"(emms-pause)\"") end),
-    awful.key({ modkey, "Shift"   }, "o",   function () awful.util.spawn("bash -c off") end),
+    awful.key({ modkey, "Shift"   }, "o",   function () awful.util.spawn("terminator -e \"off\"") end),
 
 
     -- Defaults

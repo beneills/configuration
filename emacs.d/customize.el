@@ -9,7 +9,8 @@
  '(erc-input-line-position -1)
  '(erc-join-buffer (quote bury))
  '(fill-column 80)
- '(org-agenda-files (quote ("~/Dropbox/tour.org" "~/org/planar.org" "~/org/todo.org")))
+ '(markdown-command "maruku")
+ '(org-agenda-files (quote ("~/org/notes.org" "~/org/todo.org" "~/plans/today.org" "~/projects/top3/top3.org" "~/projects/summer/summer.org" "~/projects/projects.org")))
  '(org-confirm-elisp-link-function nil)
  '(org-confirm-shell-link-function nil)
  '(org-mobile-files (quote (org-agenda-files)))
@@ -23,7 +24,3 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 105 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(region ((t (:background "green" :foreground "gtk_selection_fg_color")))))
-
-;; Customize stuff
-
-

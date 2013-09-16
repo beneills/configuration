@@ -8,6 +8,7 @@ source ~/.bash/colours.bash
 source ~/.bash/aliases.bash
 source ~/.bash/completion.bash
 source ~/.bash/env.bash
+source ~/.bash/jump.bash
 source ~/.bash/git-completion.bash
 source ~/.bash/options.bash
 
@@ -28,3 +29,5 @@ source ~/.bash/options.bash
 
 
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

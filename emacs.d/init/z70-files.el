@@ -2,14 +2,17 @@
 (setq plan-path (format-time-string "~/plans/today.org"))
 
 ;; Startup
-(setq default-files `(("emacs-config" . "~/conf/emacs.d/init.el")
+(setq default-files `(("emacs-config" . "~/conf/emacs.d/init/")
+		      ("inbox" . "~/conf/emacs.d/init/z95-inbox.el")
 		      ("bash-config" . "~/conf/bashrc")
 		      ("awesome-config" . "~/conf/config/awesome/rc.lua")
-		      ("plan" . ,plan-path)
-		      ("daily" . "~/.plan/templates/daily.org")))
+		      ("x-config" . "~/conf/xsession")
+		      ("plan" . ,plan-path)))
 
 (setq default-directories '(("bin" . "~/bin")
 			    ("projects" . "~/projects"))) ; we want ~/projects last
+
+;; TODO merge these?
 
 (dolist (item default-files)
   (let ((name (car item))

@@ -48,3 +48,56 @@
   (condition-case nil
        (call-interactively 'org-open-at-point-global)
      (error (find-file-at-point))))
+
+(defun ben-log (message)
+  (let ((log-command "~/projects/log/log.rb"))
+    (shell-command (format "%s %s > /dev/null" log-command message))))
+
+(defun grep-todos ()
+  (interactive)
+  (let ((todo-exclude-directories '("~/archive"
+				    "~/backup"
+				    "~/bin/brainworkshop_files"
+				    "~/plans"
+				    "~/.ido.last"
+				    "~/books"
+				    "~/calibre"
+				    "~/conf/emacs.d/elpa"
+				    "~/downloads"
+				    "~/images"
+				    "~/music"
+				    "~/nobackup"
+				    "~/plans"
+				    "~/queue"
+				    "~/torrents"
+				    "~/.cache"
+				    "~/.config"
+				    "~/.dbus"
+				    "~/.dropbox"
+				    "~/.dropbox-dist"
+				    "~/.emacs_backups"
+				    "~/.gconf"
+				    "~/.gem"
+				    "~/.gnome2"
+				    "~/.gnome2_private"
+				    "~/.gstreamer-0.10"
+				    "~/.ido.last"
+				    "~/.kde"
+				    "~/.local"
+				    "~/.macromedia"
+				    "~/.marks"
+				    "~/.matplotlib"
+				    "~/.mozilla"
+				    "~/.mplayer"
+				    "~/.onboard"
+				    "~/.pan2"
+				    "~/.pki"
+				    "~/.plan"
+				    "~/.purple"
+				    "~/.sabnzbd"
+				    "~/.secret"
+				    "~/.ssh"
+				    "~/.wicd"))
+	(find-args "find ~/ -type d \\( ! -path \\.git \\) \\( -path %s \\) -prune -o -type f -exec grep -nH -e TODO {} +"))
+    (grep-find (format find-args
+		       (mapconcat 'identity todo-exclude-directories " -o -path ")))))

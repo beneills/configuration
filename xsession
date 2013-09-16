@@ -3,26 +3,31 @@
 # Access my scripts
 source ~/.bash/env.bash
 
-# Tasks before anything else TODO: set up user anacron?
-DAILY="/home/ziarkaen/bin/daily.rb"
-($DAILY >> /tmp/daily.log; emacs) &
+# Daily Tasks
+(/home/ziarkaen/bin/daily.rb >> /tmp/daily.log) &
 
 # TODO redshift
+# TODO     /home/ziarkaen/bin/clipboardd &
 
 # Autorun
 chromium-browser &
-anki -l fr &
-keepassx &
-terminator -m --title static_term & # static terminal
-terminator -m --title fume_term -e fume_ben & # fume
-
+emacs &
 guake &
 wicd-client --tray &
-xscreensaver -no-splash &
-xfce4-power-manager &
-xfce4-volumed &
-dropbox start &
-/home/ziarkaen/bin/clipboardd &
 
+# delayed
+(sleep 5; \
+    anki -l fr & \
+    keepassx & \
+    terminator -m --title static_term & \
+    terminator -m --title fume_term -e fume_ben & \
+    terminator -m --title linode_term -e "ssh linode" & \
+    xscreensaver -no-splash & \
+    xfce4-power-manager & \
+    xfce4-volumed & \
+    dropbox start & \
+    google-musicmanager & \
+    jekyll serve --watch -s ~/projects/beneills.com & ) &
+    
 # and then the WM
 exec awesome
