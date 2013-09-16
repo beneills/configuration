@@ -1,7 +1,7 @@
 ;; EMMS
 (require 'emms-setup)
 (require 'emms-volume)
-(emms-all)
+(emms-default)
 
 (emms-default-players)
 (setq emms-source-file-default-directory "~/music/")
@@ -10,7 +10,7 @@
 (emms-mode-line-disable)
 (emms-playing-time-disable-display)
 
-;; lastfm settings in ~/.secret/emacs.el
+;; lastfm settings in ~/.secret/emacs.el - disabled currently
 
 
 
