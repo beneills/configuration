@@ -16,3 +16,6 @@ secret
 *~
 
 /emacs.d/history
+/emacs.d/emms/emms-lastfm-client-sessionkey
+/emacs.d/emms/scores
+/emacs.d/bookmarks
