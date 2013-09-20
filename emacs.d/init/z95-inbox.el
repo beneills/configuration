@@ -109,3 +109,6 @@
 (set-face-attribute 'default nil :height 95) ;; laptop
 
 (flymake-mode 1)
+
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.coffee\\'" . js-mode))
