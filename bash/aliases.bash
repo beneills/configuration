@@ -25,6 +25,7 @@ alias anki-french='anki-french.rb -f ~/Anki/cloze-imports.txt'
 alias it='git'
 
 alias off='sudo shutdown -h now'
+alias zzz='pm-hibernate'
 alias gh='hub browse'
 alias archive='mv -int ~/archive'
 alias less='less -i'
