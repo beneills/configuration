@@ -42,15 +42,15 @@
   (open-project-files-of-pattern "*review.monthly.org"))
 
 ;; Plan in morning, projects otherwise
-(if (first-startup-today-p)
-    (switch-to-buffer "plan")
-  (switch-to-buffer "projects"))
+;; (if (first-startup-today-p)
+;;     (switch-to-buffer "plan")
+;;   (switch-to-buffer "projects"))
 
-;; Plan auto-revert
-(save-current-buffer
-  (when (get-buffer "plan")
-    (set-buffer "plan")
-    (turn-on-auto-revert-mode)))
+;; ;; Plan auto-revert
+;; (save-current-buffer
+;;   (when (get-buffer "plan")
+;;     (set-buffer "plan")
+;;     (turn-on-auto-revert-mode)))
 
 ;; auto-save mode
 (setq plan-auto-save-timer (run-at-time t 10 (lambda ()
