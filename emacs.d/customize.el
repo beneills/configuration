@@ -10,7 +10,7 @@
  '(erc-join-buffer (quote bury))
  '(fill-column 80)
  '(markdown-command "maruku")
- '(org-agenda-files (quote ("~/org/notes.org" "~/org/todo.org" "~/plans/today.org" "~/projects/top3/top3.org" "~/projects/summer/summer.org" "~/projects/projects.org")))
+ '(org-agenda-files (quote ("~/projects/hashcatch/site/hashcatch.org" "~/org/notes.org" "~/org/todo.org" "~/plans/today.org" "~/projects/summer/summer.org" "~/projects/projects.org")))
  '(org-confirm-elisp-link-function nil)
  '(org-confirm-shell-link-function nil)
  '(org-mobile-files (quote (org-agenda-files)))
