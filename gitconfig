@@ -19,3 +19,5 @@
   path = ~/.secret/gitconfig
 [push]
 	default = simple
+[core]
+	excludesfile = /home/ziarkaen/.gitignore
