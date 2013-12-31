@@ -1,5 +1,6 @@
 ## Some aliases
 
+alias snapshot='ksnapshot --region'
 alias log='~/projects/log/log.rb'
 alias cinema='echo "Ctrl-C to exit"; watch -n10 "xscreensaver-command -deactivate" > /dev/null'
 # Editor
@@ -25,7 +26,7 @@ alias anki-french='anki-french.rb -f ~/Anki/cloze-imports.txt'
 alias it='git'
 
 alias off='sudo shutdown -h now'
-alias zzz='pm-hibernate'
+alias zzz='sudo pm-hibernate'
 alias gh='hub browse'
 alias archive='mv -int ~/archive'
 alias less='less -i'
