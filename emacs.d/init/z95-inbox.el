@@ -52,7 +52,8 @@
      (font-lock-add-keywords mode `((,pattern 1 'taylor-special-words prepend))))
    '(ada-mode c-mode emacs-lisp-mode java-mode haskell-mode
               literate-haskell-mode html-mode lisp-mode php-mode python-mode ruby-mode
-              scheme-mode sgml-mode sh-mode sml-mode markdown-mode)))
+              scheme-mode sgml-mode sh-mode sml-mode markdown-mode
+	      org-mode)))
 
 ;Make completion buffers in a shell disappear after 5 seconds.
 ;<http://snarfed.org/space/why+I+don't+run+shells+inside+Emacs>
@@ -112,3 +113,13 @@
 
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
 (add-to-list 'auto-mode-alist '("\\.coffee\\'" . js-mode))
+
+(defun reading-time ()
+  (interactive)
+  (let* ((words-per-minute 200)
+	(characters (if (region-active-p)
+			(- (region-end) (region-beginning))
+		      (point-max)))
+	(words (/ characters 5))
+	(estimated-time (/ (float words) words-per-minute)))
+    (message (format "Estimated reading time: %2s minutes @ %dwpm" estimated-time words-per-minute))))
