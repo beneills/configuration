@@ -31,4 +31,4 @@ source ~/.bash/env.bash
 #    xflock4 &) &
     
 # and then the WM
-exec awesome
+#exec awesome
