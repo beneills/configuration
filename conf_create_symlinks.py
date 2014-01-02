@@ -4,8 +4,8 @@ import os
 import os.path
 
 IGNORE_FILES = ( 'conf_create_symlinks.py', 'conf_add.py')
-SOURCE_DIR = '/home/ziarkaen/conf'
-TARGET_DIR = '/home/ziarkaen'
+SOURCE_DIR = '/home/ben/conf'
+TARGET_DIR = '/home/ben'
 
 
 entries = [f for f in os.listdir(SOURCE_DIR) if f not in IGNORE_FILES and not f.startswith('.')]
