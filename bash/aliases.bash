@@ -132,3 +132,9 @@ function vpn() {
     sudo openvpn --config /etc/openvpn/myvpn.conf
 }
 
+
+# youtube download from Muflax
+function y() {
+  echo "Paste links, ^D to start the download."
+  youtube-dl --ignore-errors --max-quality 22 --continue --rate-limit 2.5m -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
+}
