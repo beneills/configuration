@@ -5,8 +5,8 @@ import os.path
 import sys
 
 IGNORE_FILES = ( 'conf_create_symlinks.py', 'conf_add.py')
-SOURCE_DIR = '/home/ziarkaen/conf'
-TARGET_DIR = '/home/ziarkaen'
+SOURCE_DIR = '/home/ben/conf'
+TARGET_DIR = '/home/ben'
 
 if len(sys.argv) < 2:
     exit("Supply config files to add to repo")
