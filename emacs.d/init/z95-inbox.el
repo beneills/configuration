@@ -123,3 +123,7 @@
 	(words (/ characters 5))
 	(estimated-time (/ (float words) words-per-minute)))
     (message (format "Estimated reading time: %2s minutes @ %dwpm" estimated-time words-per-minute))))
+
+(load "tex") ;; auctex
+
+;;(add-hook 'after-init-hook #'global-flycheck-mode)

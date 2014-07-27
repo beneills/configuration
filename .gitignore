@@ -3,6 +3,7 @@ emacs.d/auto-save-list/
 emacs.d/ac-comphist.dat
 emacs.d/session*
 emacs.d/emms/cache
+emacs.d/semanticdb
 /emacs.d/url/cookies
 emacs.d/elpa
 emacs.d/daily-startup/*

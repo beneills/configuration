@@ -10,20 +10,22 @@
   "Connect to IRC."
   (interactive)
   (erc :server "irc.freenode.net" :port 6667
-       :nick "Ziarkaen" :full-name "Ziarkaen"))
+       :nick "Ziarkaen" :full-name "Ziarkaen")
+  (erc :server "irc.what-network.net" :port 6667
+       :nick whatcd-user :full-name whatcd-user))
 ;  (erc :server "irc.snoonet.org" :port 6667
 ;       :nick "Ziarkaen" :full-name "Ziarkaen"))
 
 
 (setq erc-prompt-for-nickserv-password nil)
 (setq erc-nickserv-passwords
-      `((freenode     (("Ziarkaen" . ,freenode-nickserv-password)))))
+      `((freenode     (("Ziarkaen" . ,freenode-nickserv-password)))
+        (whatcd     ((,whatcd-user . ,whatcd-nickserv-password)))))
 
 
 
 (setq erc-autojoin-channels-alist '(("freenode.net" "#emacs" "##French" "##math"
 				                    "#ruby" "#latin")))
-;				    ("snoonet.org" "#totallanguage")))
 
 ;; Only use modebar when something important happens
 (setq erc-format-query-as-channel-p t

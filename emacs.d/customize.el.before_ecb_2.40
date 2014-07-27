@@ -5,12 +5,10 @@
  ;; If there is more than one, they won't work right.
  '(TeX-PDF-mode t)
  '(autopair-global-mode t)
- '(c-basic-offset 2)
  '(coffee-tab-width 2)
  '(completion-styles (quote (basic partial-completion emacs22 initials)))
  '(dired-auto-revert-buffer t)
  '(dired-recursive-copies (quote always))
- '(ecb-options-version "2.40")
  '(erc-autojoin-mode t)
  '(erc-button-mode t)
  '(erc-fill-mode t)
