@@ -1,0 +1,17 @@
+config:
+  default-time: 40
+  sound-file: /var/lib/gems/1.9.1/gems/future_me-*/signal.wav
+
+schedule:
+
+# Squeeze the heck out of your butt of the leg that’s behind you. To enhance this stretch, raise the hand of the stretched hip to the ceiling. If you can't "feel" your butt contracting, try tapping it with your fingers or squeezing it.
+# (for hip flexors) http://i.imgur.com/L6OUQ.jpg
+- &llunge L Lunge
+- &rlunge R Lunge
+- *llunge
+- *rlunge
+
+- &lquad L Standing Quad Stretch
+- &rquad R Standing Quad Stretch
+- *lquad
+- *rquad
