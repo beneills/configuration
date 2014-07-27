@@ -15,3 +15,5 @@ application/x-bittorrent=deluge.desktop
 text/html=chromium-browser.desktop
 text/plain=emacs24.desktop
 video/x-flv=vlc.desktop
+x-scheme-handler/magnet=deluge.desktop
+
