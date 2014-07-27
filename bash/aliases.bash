@@ -1,5 +1,6 @@
 ## Some aliases
 
+alias ankitime='echo $(( `sqlite3 ~/Anki/User\ 1/collection.anki2 "select sum(time) from revlog"` / (1000*60) )) minutes'
 alias snapshot='ksnapshot --region'
 alias log='~/projects/log/log.rb'
 alias cinema='echo "Ctrl-C to exit"; watch -n10 "xscreensaver-command -deactivate" > /dev/null'
@@ -128,8 +129,8 @@ function emms() {
 }
 
 function vpn() {
-    sudo sh -c "echo \"nameserver 8.8.8.8\" > /etc/resolv.conf"
-    sudo openvpn --config /etc/openvpn/myvpn.conf
+#    sudo sh -c "echo \"nameserver 8.8.8.8\" > /etc/resolv.conf"
+    sudo openvpn --config /etc/openvpn/whatbox.conf
 }
 
 
