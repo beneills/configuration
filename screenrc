@@ -1,0 +1,33 @@
+## always start at screen 1
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10
+
+## other settings
+altscreen on
+term screen-256color
+vbell off
+bell off
+escape ^Zz
+startup_message off
+
+## disable visual bell switching
+bind ^g
+
+## status line
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%1`%{g}][%{B} %m-%d %{W}%c %{g}]'
+
+
+## initial config
+screen -t alpha 1
+screen -t beta 2
+screen -t gamma 3
+screen -t delta 4
+screen -t epsilon 4
+screen -t chat 8 irssi
+screen -t pomodoro 9
+
+# start on alpha window, with chat accessible through C-z C-z
+select chat
+select alpha
