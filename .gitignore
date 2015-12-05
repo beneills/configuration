@@ -1,28 +1,29 @@
-# Emacs cache directories
-emacs.d/auto-save-list/
+# Emacs auto-generated/tmp directories
+/#emacs#
 emacs.d/ac-comphist.dat
-emacs.d/session*
-emacs.d/emms/cache
-emacs.d/semanticdb
-/emacs.d/url/cookies
-emacs.d/elpa
-emacs.d/daily-startup/*
-emacs.d/recentf
+emacs.d/auto-save-list/
 emacs.d/beneills.el
+emacs.d/bookmarks
+emacs.d/daily-startup/*
+emacs.d/elpa
+emacs.d/emms/cache
+emacs.d/emms/emms-lastfm-client-sessionkey
+emacs.d/emms/scores
+emacs.d/eshell
+emacs.d/history
+emacs.d/recentf
+emacs.d/semanticdb
+emacs.d/session*
+emacs.d/url/cookies
+
+# Emacs backup files
+*~
 
 # We never want to publish ~/.secret
 secret
 .secret
-/#emacs#
 
-# Emacs
-*~
-
-/emacs.d/history
-/emacs.d/emms/emms-lastfm-client-sessionkey
-/emacs.d/emms/scores
-/emacs.d/bookmarks
-
+# Exclude some local/share stuff
 local/share/Trash/
 local/share/gegl-0.2/
 local/share/gvfs-metadata/

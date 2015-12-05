@@ -79,7 +79,7 @@ Zap up to char:
 * Org Mode
 Config:
 #+BEGIN_SRC emacs-lisp
-  (setq org-default-notes-file "~/org/notes.org")
+  (setq org-default-notes-file "~/files/org/notes.org")
 #+END_SRC
 Functions:
 #+BEGIN_SRC emacs-lisp
@@ -366,7 +366,7 @@ Open this config file, if not already open:
 
 Open GTD file, if not already open:
 #+BEGIN_SRC emacs-lisp
-  (let ((gtd-path "~/org/gtd.org"))
+  (let ((gtd-path "~/files/org/gtd.org"))
     (unless (get-file-buffer gtd-path)
       (find-file gtd-path)))
 #+END_SRC
@@ -482,7 +482,7 @@ Copy file information to clipboard:
 #+END_SRC
 * Remember
 #+BEGIN_SRC emacs-lisp
-  (setq remember-file "~/org/emacs-remember")
+  (setq remember-file "~/files/org/emacs-remember")
 
   (defun remember-key (key)
     (interactive "KKey seq: \n")
