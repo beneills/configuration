@@ -130,12 +130,12 @@ function emms() {
 
 function vpn() {
 #    sudo sh -c "echo \"nameserver 8.8.8.8\" > /etc/resolv.conf"
-    sudo openvpn --config /etc/openvpn/whatbox.conf
+    sudo openvpn --config /etc/openvpn/vpn.conf
 }
 
 
 # youtube download from Muflax
 function y() {
   echo "Paste links, ^D to start the download."
-  youtube-dl --ignore-errors --max-quality 22 --continue --rate-limit 2.5m -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
+  youtube-dl --ignore-errors --continue --rate-limit 2.5m -o "$HOME/youtube/%(title)s-%(id)s.%(ext)s" -a-
 }

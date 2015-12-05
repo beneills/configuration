@@ -3,13 +3,6 @@
 # Use bash-completion, if available
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion
 
-# Beeminder goals
-if [ -f "/home/ziarkaen/.beeminder_goals" ]; then
-    BEEMINDER_GOALS=$(tr '\n' ' ' < ~/.beeminder_goals);
-fi
-complete -W "$BEEMINDER_GOALS" beemind
-
-
 # Multimedia
 complete -f -o default -X \
     '!*.+(gif|GIF|jp*g|JP*G|bmp|BMP|xpm|XPM|png|PNG)' xv gimp ee gqview
