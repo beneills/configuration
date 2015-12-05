@@ -371,6 +371,13 @@ Open GTD file, if not already open:
       (find-file gtd-path)))
 #+END_SRC
 
+Open downloads directory, if not already open:
+#+BEGIN_SRC emacs-lisp
+  (let ((downloads-path "~/tmp/downloads"))
+    (unless (get-file-buffer downloads-path)
+      (find-file downloads-path)))
+#+END_SRC
+
 * Customize
 #+BEGIN_SRC emacs-lisp
   (load (setq custom-file "~/.emacs.d/customize.el"))
