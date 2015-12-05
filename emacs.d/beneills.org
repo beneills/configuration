@@ -378,6 +378,15 @@ Open downloads directory, if not already open:
       (find-file downloads-path)))
 #+END_SRC
 
+Open current project directories, if not already open:
+#+BEGIN_SRC emacs-lisp
+  (setq current-projects '("~/files/inbox/highlighting"))
+
+  (dolist (path current-projects)
+    (unless (get-file-buffer path)
+      (find-file path)))
+#+END_SRC
+
 * Customize
 #+BEGIN_SRC emacs-lisp
   (load (setq custom-file "~/.emacs.d/customize.el"))
