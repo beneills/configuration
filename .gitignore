@@ -7,6 +7,8 @@ emacs.d/semanticdb
 /emacs.d/url/cookies
 emacs.d/elpa
 emacs.d/daily-startup/*
+emacs.d/recentf
+emacs.d/beneills.el
 
 # We never want to publish ~/.secret
 secret
