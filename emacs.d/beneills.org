@@ -16,9 +16,9 @@ Install packages if they do not already exist.
   (setq package-list '(expand-region yaml-mode markdown-mode helm yasnippet magit minimap))
   
   ; list the repositories containing them
-  (setq package-archives '(("gnu"       . "http://elpa.gnu.org/packages/")
-                           ("melpa" . "http://melpa.milkbox.net/packages/")
-                           ("marmalade" . "http://marmalade-repo.org/packages/")))
+  (setq package-archives '(("gnu"          . "http://elpa.gnu.org/packages/")
+                           ("melpa-stable" . "https://stable.melpa.org/packages/")
+                           ("marmalade"    . "http://marmalade-repo.org/packages/")))
   
   ; activate all the packages (in particular autoloads)
   (package-initialize)
