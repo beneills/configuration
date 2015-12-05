@@ -5,7 +5,7 @@ import os.path
 import sys
 
 IGNORE_FILES = ( 'conf_create_symlinks.py', 'conf_add.py')
-SOURCE_DIR = '/home/ben/conf'
+SOURCE_DIR = '/home/ben/files/conf'
 TARGET_DIR = '/home/ben'
 
 if len(sys.argv) < 2:
