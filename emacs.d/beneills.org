@@ -352,7 +352,7 @@ Set up highlighting of special words for selected modes
       (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
                      '(1 "_NET_WM_STATE_MAXIMIZED_VERT"
                       "_NET_WM_STATE_MAXIMIZED_HORZ")))
-    (if (window-system)
+    (if (and (window-system) (eq system-type 'gnu/linux))
         (run-at-time 2 nil 'activate-maximized))
 #+END_SRC
 
@@ -362,29 +362,6 @@ Open this config file, if not already open:
     (unless (get-file-buffer config-path)
       (find-file config-path)
       (rename-buffer "config")))
-#+END_SRC
-
-Open GTD file, if not already open:
-#+BEGIN_SRC emacs-lisp
-  (let ((gtd-path "~/files/org/gtd.org"))
-    (unless (get-file-buffer gtd-path)
-      (find-file gtd-path)))
-#+END_SRC
-
-Open downloads directory, if not already open:
-#+BEGIN_SRC emacs-lisp
-  (let ((downloads-path "~/tmp/downloads"))
-    (unless (get-file-buffer downloads-path)
-      (find-file downloads-path)))
-#+END_SRC
-
-Open current project directories, if not already open:
-#+BEGIN_SRC emacs-lisp
-  (setq current-projects '("~/files/inbox/highlighting"))
-
-  (dolist (path current-projects)
-    (unless (get-file-buffer path)
-      (find-file path)))
 #+END_SRC
 
 * Customize
@@ -780,4 +757,10 @@ Keys:
           (add-to-list 'minor-mode-alist `(tr-mode ,(format-time-string " %S"))))
       ()))
   
+#+END_SRC
+* OSX
+#+BEGIN_SRC emacs-lisp
+(when (eq system-type 'darwin)
+  ;; Allow hash to be entered  
+  (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#"))))
 #+END_SRC
