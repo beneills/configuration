@@ -1,16 +1,32 @@
-# Largely taken from: http://tldp.org/LDP/abs/html/sample-bashrc.html
+# reverse priority order
+export PATH="/usr/local/bin:$PATH"
+export PATH="/Users/ben/Library/Python/2.7/bin:$PATH"
+export PATH="/Users/ben/files/bin:$PATH"
 
-# OS default bashrc
-[ -f ~/.bashrc_default ] && source ~/.bashrc_default
+# python
+export PYTHONPATH="$PYTHONPATH:~/files/repos/task-library"
 
-# Colours
-source ~/.bash/colours.bash
+# editor
+export VISUAL="emacsclient -nw"
+export EDITOR="$VISUAL"
 
+# genestack aliases
+alias gdeploy='mvn package && genestack-application-manager install -o -s -S user v1 target/*.jar'
 
-## Load other config files
-source ~/.bash/aliases.bash
-source ~/.bash/completion.bash
-source ~/.bash/env.bash
-source ~/.bash/git-completion.bash
-source ~/.bash/options.bash
-source ~/.bash/inbox.bash
+# terminal configuration
+export CLICOLOR=1
+
+# git aliases
+alias g='git'
+alias get='git'
+alias ga='git add'
+alias gm="git merge"
+alias gs='git status'
+alias gll='git log --graph --pretty=oneline --abbrev-commit'
+alias gg="git log --graph --pretty=format:'%C(bold)%h%Creset%C(magenta)%d%Creset %s %C(yellow)<%an> %C(cyan)(%cr)%Creset' --abbrev-commit --date=relative"
+alias gsl="git shortlog -sn"
+alias gw="git whatchanged"
+
+# prompt
+export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+source /Users/ben/.oh-my-git/prompt.sh
