@@ -1,23 +1,24 @@
 [user]
 	name = Ben Eills
 	email = ben@beneills.com
+
 [credential]
 	helper = cache
 
 [alias]
-  co = checkout
-  ci = commit
-  st = status
-  br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-
+	# list branches sorted by last modified
+	b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+	br = branch
+	co = checkout
+	d = diff
+	dc = diff --cached
+	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	# list aliases
+	la = "!git config -l | grep alias | cut -c 7-"
+	st = status
 
 [include]
-  path = ~/.secret/gitconfig
+	path = ~/.secret/gitconfig
+
 [push]
 	default = simple
-[core]
-#	excludesfile = /home/ziarkaen/.gitignore
