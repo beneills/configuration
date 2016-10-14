@@ -21,6 +21,8 @@ alias fmvn="mvn -T 1C"
 
 # terminal configuration
 export CLICOLOR=1
+export HISTSIZE=5000
+export HISTFILESIZE=5000
 
 # git aliases
 alias g='git'
