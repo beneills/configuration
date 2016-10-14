@@ -11,7 +11,13 @@ export VISUAL="emacsclient -nw"
 export EDITOR="$VISUAL"
 
 # genestack aliases
-alias gdeploy='mvn package && genestack-application-manager install -o -s -S user v1 target/*.jar'
+alias gdeploy='fmvn package && genestack-application-manager install -o -s -S user v1 target/*.jar'
+
+# speed up maven
+export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
+
+# multithreaded maven
+alias fmvn="mvn -T 1C"
 
 # terminal configuration
 export CLICOLOR=1
