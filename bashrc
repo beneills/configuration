@@ -1,6 +1,7 @@
 # reverse priority order
 export PATH="/usr/local/bin:$PATH"
 export PATH="/Users/ben/Library/Python/2.7/bin:$PATH"
+export PATH="/Users/ben/anaconda3/bin:$PATH"
 export PATH="/Users/ben/files/bin:$PATH"
 
 # python
