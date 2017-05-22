@@ -502,7 +502,7 @@ Keys:
   (setq ess-indent-with-fancy-comments nil)
   (setq require-final-newline t)
   (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "chromium-browser")
+      browse-url-generic-program "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 
   ;; Auto-revert mode   (add-hook 'dired-mode-hook 'turn-on-auto-revert-mode)   (setq auto-revert-verbose nil)
   ;;; Shell mode   ;(defadvice process-kill-buffer-query-function (around no-prompt-for-shells   ;                                                     protect)   ;  "Don't prompt user when killing shell with running process"   ;  (message major-mode)   ;  (let ((modes '("shell-mode")))   ;  (unless (member major-mode modes)   ;    ad-do-it)))      (push '("bashrc$" . sh-mode) auto-mode-alist)   (push '("xsession$" . sh-mode) auto-mode-alist)         ;Make completion buffers in a shell disappear after 5 seconds.   ;<http://snarfed.org/space/why+I+don't+run+shells+inside+Emacs>   (add-hook 'completion-setup-hook             (lambda () (run-at-time 5 nil                                     (lambda () (if (not (equal (buffer-name) "*Completions*"))                                                    (delete-windows-on "*Completions*"))))))      ; TODO: flyspell
