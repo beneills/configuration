@@ -1,5 +1,6 @@
 # Emacs auto-generated/tmp directories
 /#emacs#
+emacs.d/abbrev_defs
 emacs.d/ac-comphist.dat
 emacs.d/auto-save-list/
 emacs.d/beneills.el
@@ -11,6 +12,7 @@ emacs.d/emms/emms-lastfm-client-sessionkey
 emacs.d/emms/scores
 emacs.d/eshell
 emacs.d/history
+emacs.d/notes
 emacs.d/recentf
 emacs.d/semanticdb
 emacs.d/session*
