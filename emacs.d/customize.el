@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ess minimap magit yasnippet helm markdown-mode yaml-mode expand-region))))
+    (bongo lorem-ipsum csv-mode feature-mode ecukes ess minimap magit yasnippet helm markdown-mode yaml-mode expand-region))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
