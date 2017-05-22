@@ -765,3 +765,21 @@ Keys:
   ;; Allow hash to be entered  
   (global-set-key (kbd "M-3") '(lambda () (interactive) (insert "#"))))
 #+END_SRC
+* Speech
+#+BEGIN_SRC emacs-lisp
+(load-file "/Users/ben/files/repos/read-aloud.el/read-aloud.el")
+(setq read-aloud-engine "say")
+#+END_SRC
+* BB
+#+BEGIN_SRC emacs-lisp
+(defun bbgr ()
+  (interactive)
+  (message
+   (string-trim
+    (shell-command-to-string "/usr/local/bin/gshuf -n 1 ~/.s/docs/bib_gr/64-Jn.txt"))))
+(defun bbde ()
+  (interactive)
+  (message
+   (string-trim
+    (shell-command-to-string "/usr/local/bin/gshuf -n 1 ~/.s/docs/bib_de_john.txt"))))
+#+END_SRC
