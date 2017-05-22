@@ -7,8 +7,13 @@
 
 [alias]
 	# list branches sorted by last modified
+	a = add --p
 	b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 	br = branch
+	c = commit
+	ca = commit --amend
+	can = commit --amend --no-edit
+	cm = commit -m
 	co = checkout
 	d = diff
 	dc = diff --cached
@@ -18,7 +23,10 @@
 	st = status
 
 [include]
-	path = ~/.secret/gitconfig
+	path = ~/.s/config/gitconfig
 
 [push]
 	default = simple
+
+[interactive]
+    singleKey = true
