@@ -499,6 +499,7 @@ Keys:
 #+END_SRC
 * TODO Inbox
 #+BEGIN_SRC emacs-lisp
+  (setq ess-indent-with-fancy-comments nil)
   (setq require-final-newline t)
   (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "chromium-browser")
