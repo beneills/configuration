@@ -3,6 +3,8 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/Users/ben/Library/Python/2.7/bin:$PATH"
 export PATH="/Users/ben/anaconda3/bin:$PATH"
 export PATH="/Users/ben/files/bin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="/Users/ben/.s/bin:$PATH"
 
 # python
 export PYTHONPATH="$PYTHONPATH:~/files/repos/task-library"
@@ -12,7 +14,7 @@ export VISUAL="emacsclient -nw"
 export EDITOR="$VISUAL"
 
 # genestack aliases
-alias gdeploy='fmvn package && genestack-application-manager install -o -s -S user v1 target/*.jar'
+alias gdeploy='fmvn package && genestack-application-manager install -o -s -S user be-v1 target/*.jar'
 
 # speed up maven
 export MAVEN_OPTS="-XX:+TieredCompilation -XX:TieredStopAtLevel=1"
@@ -22,8 +24,11 @@ alias fmvn="mvn -T 1C"
 
 # terminal configuration
 export CLICOLOR=1
+
+# bash history
 export HISTSIZE=5000
 export HISTFILESIZE=5000
+export HISTIGNORE="bb*"
 
 # git aliases
 alias g='git'
@@ -37,5 +42,10 @@ alias gsl="git shortlog -sn"
 alias gw="git whatchanged"
 
 # prompt
-export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-source /Users/ben/.oh-my-git/prompt.sh
+#export PS1="\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\h:\[$(tput sgr0)\]\[\033[38;5;6m\][\w]:\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
+#source /Users/ben/.oh-my-git/prompt.sh
+export PS1="\w $ "
+
+# source others
+source ~/.bash/git-completion.bash
+source ~/.s/config/bash
