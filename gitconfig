@@ -6,21 +6,37 @@
 	helper = cache
 
 [alias]
-	# list branches sorted by last modified
 	a = add --p
+	# list branches sorted by last modified
 	b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
 	br = branch
-	c = commit
-	ca = commit --amend
-	can = commit --amend --no-edit
-	cm = commit -m
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	brr = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+	c = commit -S
+	ca = commit -S --amend
+	can = commit -S --amend --no-edit
+	cm = commit -S -m
+	cne = commit --no-edit
 	co = checkout
+	commit = commit -S
+	cop = "!git checkout $1 && git pull #"
+	copl = "checkout -- '**/package-lock.json'"
 	d = diff
 	dc = diff --cached
+	dno = diff --name-only
+	dom = diff origin/master
+	fm = "!git fetch && git merge origin/master"
 	l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	# list aliases
-	la = "!git config -l | grep alias | cut -c 7-"
+	la = "!git config -l | grep alias | cut -c 7- | sed 's/=/\t-> /' | nl -n ln -w 2 -s '  '"
+	ma = merge --abort
+	mm = "!git fetch && git merge --no-edit origin/master"
+	p = "!git publish"
+	publish = "!git push -u origin $(git branch-name)"
+	ssp0 = "stash show -p stash@{0}"
 	st = status
+	u = "unstage"
+	unstage = "reset HEAD --"
 
 [include]
 	path = ~/.s/config/gitconfig
